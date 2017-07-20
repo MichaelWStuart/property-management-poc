@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Tenant extends React.Component {
+export default class Boss extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -8,7 +8,7 @@ export default class Tenant extends React.Component {
   render() {
     return (
       <div>
-        <h1>Tenant View</h1>
+        <h1>Boss View</h1>
       </div>
     );
   }
