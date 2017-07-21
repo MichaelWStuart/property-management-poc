@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { StyleSheet, Text, View } from 'react-native';
+import AppNav from './appbar.js';
 
-class Header extends React-Component{
+class Header extends React.Component{
   constructor(props){
     super(props);
   }
@@ -10,9 +10,7 @@ class Header extends React-Component{
   render(){
     return (
       <div>
-        <div className="logo"></div>
-        <h1> Apodments Placeholder Title </h1>
-        <div className="hamburger-menu"></div>
+        <AppNav />
       </div>
     )
   }

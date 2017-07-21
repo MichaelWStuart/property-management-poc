@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { StyleSheet, Text, View } from 'react-native';
 import FUButton from './FU-Button.js';
 
 class Item extends React-Component{
@@ -14,7 +13,7 @@ class Item extends React-Component{
     }
   }
 
-  
+
 
   handleClickFU(e){
     e.preventDefault()
