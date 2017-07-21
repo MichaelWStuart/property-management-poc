@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { StyleSheet, Text, View } from 'react-native';
 
 class TenantInfo extends React-Component{
   constructor(props){

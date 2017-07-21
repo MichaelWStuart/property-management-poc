@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Header from './components/Header.js'
 
 import Tenant from './components/Tenant';
 import Manager from './components/Manager';
@@ -11,6 +12,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
+          <Route exact path={''} component={Header} />
           <Route exact path={'/boss'} component={Boss} />
           <Route exact path={'/manager'} component={Manager} />
           <Route exact path={'/tenant'} component={Tenant} />
