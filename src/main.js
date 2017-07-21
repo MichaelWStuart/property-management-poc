@@ -32,6 +32,199 @@ class App extends React.Component {
         refundOwed: 0,
         managerRemarks: '',
       }
+      areas: [
+        mainRoom: [
+          areaName: 'Main Room',
+          issues: [
+            {
+              issueName: 'Unit tile and grout clean',
+              conditionDefault: 'Clean, no stains or damage',
+            },
+            {
+              issueName: 'Carpet free of spots, indents, rips, or tears',
+              conditionDefault: 'No stains, no indents from furnishings, no damage',
+            },
+            {
+              issueName: 'Baseboards wiped down',
+              conditionDefault: 'Clean, no marks',
+            },
+            {
+              issueName: 'Pin holes filled AND wiped down',
+              conditionDefault: 'No holes',
+            },
+            {
+              issueName: 'Heaters clean and wall streaks cleaned',
+              conditionDefault: 'Clean',
+            },
+            {
+              issueName: 'Markes repaired or painted',
+              conditionDefault: 'No marks',
+            },
+            {
+              issueName: 'Closet organizer wiped down/damage free',
+              conditionDefault: 'Clean, no damage, no marks',
+            },
+          ],
+        ],
+
+        doors: [
+          areaName: 'Main Room',
+          issues: [
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+          ],
+        ],
+
+        bed: [
+          areaName: 'Main Room',
+          issues: [
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+          ],
+        ],
+
+        windows: [
+          areaName: 'Main Room',
+          issues: [
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+          ],
+        ],
+
+        wetbar: [
+          areaName: 'Main Room',
+          issues: [
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+          ],
+        ],
+
+        bathroom: [
+          areaName: 'Main Room',
+          issues: [
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+          ],
+        ],
+
+        pantryLocker: [
+          areaName: 'Main Room',
+          issues: [
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+          ],
+        ],
+
+        personalItemsLeft: [
+          areaName: 'Main Room',
+          issues: [
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+            {
+              issueName: '',
+              conditionDefault: '',
+            },
+          ],
+        ],
+      ]
     }
   }
 
