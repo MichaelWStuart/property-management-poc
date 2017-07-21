@@ -31,7 +31,7 @@ class App extends React.Component {
         other: '',
         refundOwed: 0,
         managerRemarks: '',
-      }
+      },
       areas: [
         mainRoom: [
           areaName: 'Main Room',
@@ -68,165 +68,160 @@ class App extends React.Component {
         ],
 
         doors: [
-          areaName: 'Main Room',
+          areaName: 'Doors',
           issues: [
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Entry free of prints/marks inside and out',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Bath free of prints/marks inside and out',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Knobs working and clean',
+              conditionDefault: 'Clean',
             },
           ],
         ],
 
         bed: [
-          areaName: 'Main Room',
+          areaName: 'Bed',
           issues: [
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Mattress, NO STAINS OR SPOTS',
+              conditionDefault: 'Mattress clean, no stains. Cover is new, no spots',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Boxspring new condition',
+              conditionDefault: 'In new condition',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Bedframe',
+              conditionDefault: 'Clean, no damage',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Table and Chair',
+              conditionDefault: 'Both are clean, no damage, no stains or marks',
             },
           ],
         ],
 
         windows: [
-          areaName: 'Main Room',
+          areaName: 'Windows',
           issues: [
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Windows clean, free of prints',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Screen good',
+              conditionDefault: 'No rips or frame damage',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Tracks clean and new-looking',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Blinds clean and new-looking',
+              conditionDefault: 'Clean. No bends. Operates as new.',
             },
           ],
         ],
 
         wetbar: [
-          areaName: 'Main Room',
+          areaName: 'Wetbar',
           issues: [
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Cabinet clean inside and out',
+              conditionDefault: 'Clean, no items stored',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Sink wiped down',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Counter-top clean, no marks',
+              conditionDefault: 'Clean, no marks or damages',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Backsplash wiped down, no damage',
+              conditionDefault: 'Clean, no marks, no dents, no damage',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Faucet clean and free of scum',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Fridge moved and cleaned, inside and out',
+              conditionDefault: 'Clean, defrosted, operating as new',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Microwave moved and cleaned, inside and out',
+              conditionDefault: 'Clean, operating as new',
             },
           ],
         ],
 
         bathroom: [
-          areaName: 'Main Room',
+          areaName: 'Bathroom',
           issues: [
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Toilet clean, inside and out, all around',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Shower scrubbed and free of soap scum',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Shower curtain',
+              conditionDefault: 'Complimentary - not required to be returned at move-out',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Bath fan/light cover clean',
+              conditionDefault: 'Fan cover grates are clean, lights work',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Mirror/cabinet clean',
+              conditionDefault: 'Clean. No damage to shelves. Door operates as new',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Baseboards wiped down',
+              conditionDefault: 'Clean',
             },
             {
-              issueName: '',
-              conditionDefault: '',
-            },
-            {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Tile and grout clean, NO STAINS/SCUM!',
+              conditionDefault: 'Clean, no stains or damage',
             },
           ],
         ],
 
         pantryLocker: [
-          areaName: 'Main Room',
+          areaName: 'Pantry Locker',
           issues: [
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Cleaned out and wiped Down',
+              conditionDefault: 'Clean. Avenida, Videre, and Pine Only',
             },
           ],
         ],
 
         personalItemsLeft: [
-          areaName: 'Main Room',
+          areaName: 'Personal Items Left',
           issues: [
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Items left in unit',
+              conditionDefault: 'None',
             },
             {
-              issueName: '',
-              conditionDefault: '',
+              issueName: 'Items left on property',
+              conditionDefault: 'None',
             },
           ],
         ],
       ]
     }
-  }
 
     getApp(){
       return {
@@ -235,10 +230,11 @@ class App extends React.Component {
       };
     }
 
-   render() {
+  render() {
     return (
       <BrowserRouter>
         <div>
+          <Area />
           <TenantInfo app={this.getApp()} />
           <Switch>
            <Route
@@ -258,6 +254,6 @@ class App extends React.Component {
 
       </BrowserRouter>
     );
-   }
+  }
 }
 ReactDOM.render(<App />, document.getElementById('root'));
