@@ -24,15 +24,21 @@ class Issue extends React.Component {
 
   handleUpload(event) {
     event.preventDefault();
-    this.setState({ localPhotoURI: event.target.localPhotoURI });
+    this.setState({ localPhotoURI: event.target.localPhotoURI, photoUploaded: true });
   }
 
   handleInputChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleConditionChange(newCondition) {
-    this.setState({ conditionCurrent: newCondition });
+  handleConditionChange(event) {
+    event.preventDefault();
+    if(this.state.conditionCurrent === 'pass')
+      this.setState({ conditionCurrent: 'fail' })
+    else if(this.state.conditionCurrent === 'fail')
+      this.setState({ conditionCurrent: 'noted' });
+    else
+      this.setState({ conditionCurrent: 'pass' });
   }
 
   render() {
@@ -45,7 +51,13 @@ class Issue extends React.Component {
           {this.state.conditionDefault}
         </td>
         <td>
-          <ConditionButton handleConditionChange={this.handleConditionChange} />
+          <input
+            type='button'
+            name='changeCondition'
+            value='Change Condition'
+            className='changeCondition'
+            onClick={this.handleConditionChange}
+          />
         </td>
       </tr>
       if(this.state.conditionCurrent === 'fail') {
@@ -70,13 +82,15 @@ class Issue extends React.Component {
                 name='uploadPhoto'
                 value='Upload'
               />
+              if(this.state.photoUploaded) {
+                <img name='photoDisplay' src={this.state.localPhotoURI} />
+              }
             </td>
-            if(this.state.photoUploaded) {
-              <img name='photoDisplay' src={this.state.localPhotoURI} />
-            }
           </form>
         </tr>
       }
     );
   }
 }
+
+export default Issue;
