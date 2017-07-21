@@ -10,7 +10,9 @@ export default class Tenant extends React.Component {
   render() {
     return (
       <div>
-        <Areas areas={this.props.areas} />
+        <Areas
+          className='areas'
+          areas={this.props.areas} />
         <button>Submit</button>
       </div>
     );
