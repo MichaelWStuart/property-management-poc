@@ -11,6 +11,7 @@ class Issue extends React.Component {
       conditionCurrent: 'pass', // pass, noted, fail
       s3PhotoURI: '',
       localPhotoURI: '',
+      photoUploaded: false,
       lineItems: '',
       approvedByManager: false,
       approvedByBoss: false,
@@ -23,24 +24,7 @@ class Issue extends React.Component {
 
   handleUpload(event) {
     event.preventDefault();
-    let file = event.target.localPhotoURI.files;
-    if (!files.length) {
-      return alert('Please choose a file to upload first.');
-    }
-    let file = files[0];
-    let fileName = file.name;
-    let photoKey = albumPhotosKey + fileName;
-    s3.upload({
-      Key: photoKey,
-      Body: file,
-      ACL: 'public-read'
-    }, function(err, data) {
-      if (err) {
-        return alert('There was an error uploading your photo: ', err.message);
-      }
-      alert('Successfully uploaded photo.');
-      viewAlbum(albumName);
-    });
+    this.setState({ localPhotoURI: event.target.localPhotoURI });
   }
 
   handleInputChange(event) {
@@ -87,6 +71,9 @@ class Issue extends React.Component {
                 value='Upload'
               />
             </td>
+            if(this.state.photoUploaded) {
+              <img name='photoDisplay' src={this.state.localPhotoURI} />
+            }
           </form>
         </tr>
       }
