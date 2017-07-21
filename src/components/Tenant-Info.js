@@ -1,28 +1,31 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { StyleSheet, Text, View } from 'react-native';
 
-class TenantInfo extends React-Component{
+class TenantInfo extends React.Component{
   constructor(props){
     super(props);
-
-    this.state = {
-      name: '',
-      building: '',
-      unit: 000,
-      phoneNumber: '',
-      email: '',
-    }
   }
 
   render(){
     return (
       <div>
-        <h2 className="tenantName">{this.state.name}</div>
-        <h3 className="buildingName">{this.state.building}</h3>
-        <h3 className="unit">{this.state.unit}</h3>
-        <p>{this.state.phoneNumber}</p>
-        <p>{this.state.email}</p>
+        <h2 className="tenantName">{this.props.app.state.tenant.residentName}></h2>
+        <h3 className="buildingName">{this.props.app.state.tenant.property}</h3>
+        <h3 className="unit">{this.props.app.state.tenant.unitNumber}</h3>
+        <p className="tenantData">{this.props.app.state.tenant.phone}</p>
+        <p className="tenantData">{this.props.app.state.tenant.email}</p>
+        <p className="tenantData">{this.props.app.state.tenant.rentStartDate}</p>
+        <p className="tenantData">{this.props.app.state.tenant.unitVacateDate}</p>
+        <p className="tenantData">{this.props.app.state.tenant.unitLockChangeDate}</p>
+        <p className="tenantData">{this.props.app.state.tenant.unitReadyToRentDate}</p>
+        <p className="tenantData">{this.props.app.state.tenant.moveInDeposit}</p>
+        <p className="tenantData">{this.props.app.state.tenant.nonRefundable}</p>
+        <p className="tenantData">{this.props.app.state.tenant.rentDue}</p>
+        <p className="tenantData">{this.props.app.state.tenant.damagesPayable}</p>
+        <p className="tenantData">{this.props.app.state.tenant.cleaningFees}</p>
+        <p className="tenantData">{this.props.app.state.tenant.other}</p>
+        <p className="tenantData">{this.props.app.state.tenant.refundOwed}</p>
+        <p className="tenantData">{this.props.app.state.tenant.managerRemarks}</p>
       </div>
     )
   }
