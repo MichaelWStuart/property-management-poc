@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/header'
 
+import TenantInfo from './components/Tenant-Info';
 import Tenant from './components/Tenant';
 import Manager from './components/Manager';
 import Boss from './components/Boss';
@@ -32,7 +33,7 @@ class App extends React.Component {
         managerRemarks: '',
       },
       areas: [
-        mainRoom: [
+        {mainRoom: {
           areaName: 'Main Room',
           issues: [
             {
@@ -64,9 +65,10 @@ class App extends React.Component {
               conditionDefault: 'Clean, no damage, no marks',
             },
           ],
-        ],
+        }
+        },
 
-        doors: [
+        {doors: {
           areaName: 'Doors',
           issues: [
             {
@@ -82,9 +84,10 @@ class App extends React.Component {
               conditionDefault: 'Clean',
             },
           ],
-        ],
+        }
+        },
 
-        bed: [
+        {bed: {
           areaName: 'Bed',
           issues: [
             {
@@ -104,9 +107,10 @@ class App extends React.Component {
               conditionDefault: 'Both are clean, no damage, no stains or marks',
             },
           ],
-        ],
+        }
+        },
 
-        windows: [
+        {windows: {
           areaName: 'Windows',
           issues: [
             {
@@ -126,9 +130,10 @@ class App extends React.Component {
               conditionDefault: 'Clean. No bends. Operates as new.',
             },
           ],
-        ],
+        }
+        },
 
-        wetbar: [
+        {wetbar: {
           areaName: 'Wetbar',
           issues: [
             {
@@ -160,9 +165,10 @@ class App extends React.Component {
               conditionDefault: 'Clean, operating as new',
             },
           ],
-        ],
+        }
+        },
 
-        bathroom: [
+        {bathroom: {
           areaName: 'Bathroom',
           issues: [
             {
@@ -194,9 +200,10 @@ class App extends React.Component {
               conditionDefault: 'Clean, no stains or damage',
             },
           ],
-        ],
+        }
+        },
 
-        pantryLocker: [
+        {pantryLocker: {
           areaName: 'Pantry Locker',
           issues: [
             {
@@ -204,9 +211,10 @@ class App extends React.Component {
               conditionDefault: 'Clean. Avenida, Videre, and Pine Only',
             },
           ],
-        ],
+        }
+        },
 
-        personalItemsLeft: [
+        {personalItemsLeft: {
           areaName: 'Personal Items Left',
           issues: [
             {
@@ -218,11 +226,13 @@ class App extends React.Component {
               conditionDefault: 'None',
             },
           ],
-        ],
-      ]
+        }
+        },
+      ],
     }
+  }
 
-    getApp(){
+  getApp(){
       return {
         state: this.state,
         setState: this.setState.bind(this),
@@ -233,8 +243,11 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
+<<<<<<< HEAD
         <Header />
           <Area />
+=======
+>>>>>>> b6384216cfe233a58db9a52aa0f8276f8766b82f
           <TenantInfo app={this.getApp()} />
           <Switch>
            <Route
