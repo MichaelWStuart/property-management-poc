@@ -1,15 +1,24 @@
 import React from 'react';
+import Issue from './issue';
 
-export default class Tenant extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const generateKey = () => Math.random();
 
-  render() {
-    return (
-      <div>
-        <h2 className='areaName'>{this.props.state.areas.areaName}</h2>
-      </div>
-    );
-  }
-}
+export const Area = props => (
+  <li>
+    <h2 className='area-name'>{props.areaName}</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th>Condition</th>
+        <th>Pass/Fail</th>
+      </tr>
+      {props.issues.map(issue =>
+        <Issue
+          className='issue'
+          key={generateKey()}
+          issue={issue}
+        />
+      )}
+    </table>
+  </li>
+);

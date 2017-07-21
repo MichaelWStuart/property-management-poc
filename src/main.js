@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from './components/Header.js'
 
 import Tenant from './components/Tenant';
 import Manager from './components/Manager';
 import Boss from './components/Boss';
-import TenantInfo from './components/Tenant-Info'
 
 class App extends React.Component {
   constructor(props){
@@ -256,4 +254,5 @@ class App extends React.Component {
     );
   }
 }
+
 ReactDOM.render(<App />, document.getElementById('root'));

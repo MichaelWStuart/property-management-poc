@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Areas from './Areas';
+
 export default class Tenant extends React.Component {
   constructor(props) {
     super(props);
@@ -8,7 +10,10 @@ export default class Tenant extends React.Component {
   render() {
     return (
       <div>
-        <h1>Tenant View</h1>
+        <Areas
+          className='areas'
+          areas={this.props.areas} />
+        <button>Submit</button>
       </div>
     );
   }
