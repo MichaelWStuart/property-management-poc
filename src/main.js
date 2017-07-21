@@ -32,7 +32,7 @@ class App extends React.Component {
         managerRemarks: '',
       },
       areas: [
-        {mainRoom: {
+        {
           areaName: 'Main Room',
           issues: [
             {
@@ -64,10 +64,9 @@ class App extends React.Component {
               conditionDefault: 'Clean, no damage, no marks',
             },
           ],
-        }
         },
 
-        {doors: {
+        {
           areaName: 'Doors',
           issues: [
             {
@@ -83,10 +82,9 @@ class App extends React.Component {
               conditionDefault: 'Clean',
             },
           ],
-        }
         },
 
-        {bed: {
+        {
           areaName: 'Bed',
           issues: [
             {
@@ -106,10 +104,9 @@ class App extends React.Component {
               conditionDefault: 'Both are clean, no damage, no stains or marks',
             },
           ],
-        }
         },
 
-        {windows: {
+        {
           areaName: 'Windows',
           issues: [
             {
@@ -129,10 +126,9 @@ class App extends React.Component {
               conditionDefault: 'Clean. No bends. Operates as new.',
             },
           ],
-        }
         },
 
-        {wetbar: {
+        {
           areaName: 'Wetbar',
           issues: [
             {
@@ -164,10 +160,9 @@ class App extends React.Component {
               conditionDefault: 'Clean, operating as new',
             },
           ],
-        }
         },
 
-        {bathroom: {
+        {
           areaName: 'Bathroom',
           issues: [
             {
@@ -199,10 +194,9 @@ class App extends React.Component {
               conditionDefault: 'Clean, no stains or damage',
             },
           ],
-        }
         },
 
-        {pantryLocker: {
+        {
           areaName: 'Pantry Locker',
           issues: [
             {
@@ -210,10 +204,9 @@ class App extends React.Component {
               conditionDefault: 'Clean. Avenida, Videre, and Pine Only',
             },
           ],
-        }
         },
 
-        {personalItemsLeft: {
+        {
           areaName: 'Personal Items Left',
           issues: [
             {
@@ -225,18 +218,18 @@ class App extends React.Component {
               conditionDefault: 'None',
             },
           ],
-        }
         },
       ],
-    }
+    };
+    this.getApp = this.getApp.bind(this);
   }
 
   getApp(){
-      return {
-        state: this.state,
-        setState: this.setState.bind(this),
-      };
-    }
+    return {
+      state: this.state,
+      setState: this.setState.bind(this),
+    };
+  }
 
   render() {
     return (
@@ -244,18 +237,18 @@ class App extends React.Component {
         <div>
           <TenantInfo app={this.getApp()} />
           <Switch>
-           <Route
-            exact
-            path={'/tenant'}
-            component={() => <Tenant app={this.getApp()} />} />
-           <Route
-            exact
-            path={'/manager'}
-            component={() => <Manager app={this.getApp()} />} />
-           <Route
-            exact
-            path={'/boss'}
-            component={() => <Boss app={this.getApp()} />} />
+            <Route
+              exact
+              path={'/tenant'}
+              component={() => <Tenant areas={this.state.areas} />} />
+            <Route
+              exact
+              path={'/manager'}
+              component={() => <Manager app={this.getApp()} />} />
+            <Route
+              exact
+              path={'/boss'}
+              component={() => <Boss app={this.getApp()} />} />
           </Switch>
         </div>
 

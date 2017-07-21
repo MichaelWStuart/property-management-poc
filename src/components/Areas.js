@@ -3,7 +3,7 @@ import Area from './Area';
 
 const generateKey = () => Math.random();
 
-export const Areas = props => (
+const Areas = props => (
   <ul>
     {props.areas.map(area =>
       <Area
@@ -12,3 +12,5 @@ export const Areas = props => (
         area={area} />)}
   </ul>
 );
+
+export default Areas;
