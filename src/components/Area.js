@@ -1,18 +1,18 @@
 import React from 'react';
-// import Issue from './issue';
+import Issue from './Issue';
 
 const generateKey = () => Math.random();
 
-export const Area = props => (
+const Area = props => (
   <li>
-    <h2 className='area-name'>{props.areaName}</h2>
+    <h2 className='area-name'>{props.area.areaName}</h2>
     <table>
       <tr>
         <th></th>
         <th>Condition</th>
         <th>Pass/Fail</th>
       </tr>
-      {props.issues.map(issue =>
+      {props.area.issues.map(issue =>
         <Issue
           className='issue'
           key={generateKey()}
@@ -22,3 +22,5 @@ export const Area = props => (
     </table>
   </li>
 );
+
+export default Area;
