@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Header from './components/Header.js'
+import Header from './components/header'
 
 import Tenant from './components/Tenant';
 import Manager from './components/Manager';
@@ -46,6 +46,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
+        <Header />
           <TenantInfo app={this.getApp()} />
           <Switch>
            <Route

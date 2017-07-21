@@ -1,24 +1,27 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import IconMenu from 'material-ui/IconMenu';
-import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
-
+import Toggle from 'material-ui/Toggle';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from "react-tap-event-plugin";
+import TenantInfo from '../Tenant-Info'
+
+injectTapEventPlugin()
 
 const DotHam = (props) => (
 <IconMenu
   {...props}
   iconButtonElement={
-    <IconButton><MoreVertIcon /></IconButton>
+    <IconButton><MenuIcon color={'white'} /></IconButton>
   }
-  targetOrigin={{horizontal: 'right', vertical: 'top'}}
-  anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+    targetOrigin={{horizontal: 'right', vertical: 'top'}}
+    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
 >
-  <MenuItem primaryText="list1" />
-  <MenuItem primaryText="list2" />
-  <MenuItem primaryText="list3" />
+
+  <TenantInfo />
 </IconMenu>
 );
 
@@ -31,7 +34,6 @@ const AppNav = () => (
     showMenuIconButton={false}
     style={{height: '5 em', backgroundColor: '#4476b2'}}
     titleStyle={{fontSize:'2em'}}
-    iconStyleRight={{fontColor: 'white'}}
     />
   </MuiThemeProvider>
 );
