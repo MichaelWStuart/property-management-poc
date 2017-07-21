@@ -1,5 +1,5 @@
 import React from 'react';
-import Issue from './issue';
+// import Issue from './issue';
 
 const generateKey = () => Math.random();
 
