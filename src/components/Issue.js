@@ -1,12 +1,10 @@
 import React from 'react';
 
-import ConditionButton from './Condition-Button.js';
-
 class Issue extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: props.issue.name,
+      name: props.issue.issueName,
       conditionDefault: props.issue.conditionDefault,
       conditionCurrent: 'pass', // pass, noted, fail
       s3PhotoURI: '',
@@ -45,7 +43,7 @@ class Issue extends React.Component {
     return (
       <tr>
         <td>
-          {this.state.name}
+          {this.state.issueName}
         </td>
         <td>
           {this.state.conditionDefault}
@@ -59,9 +57,9 @@ class Issue extends React.Component {
             onClick={this.handleConditionChange}
           />
         </td>
-      </tr>
-      if(this.state.conditionCurrent === 'fail') {
-        <tr>
+
+      {this.state.conditionCurrent === 'fail' ?
+
           <form className='uploadImage' onSubmit={this.handleUpload}>
             <td>
               <input
@@ -69,6 +67,7 @@ class Issue extends React.Component {
                 name='lineItems'
                 value={this.state.lineItems}
                 onChange={this.handle}
+              />
             </td>
             <td>
               <input
@@ -87,8 +86,8 @@ class Issue extends React.Component {
               }
             </td>
           </form>
+        : undefined}
         </tr>
-      }
     );
   }
 }

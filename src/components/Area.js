@@ -7,6 +7,7 @@ const Area = props => (
   <li>
     <h2 className='area-name'>{props.area.areaName}</h2>
     <table>
+      <tbody>
       <tr>
         <th></th>
         <th>Condition</th>
@@ -19,6 +20,7 @@ const Area = props => (
           issue={issue}
         />
       )}
+      </tbody>
     </table>
   </li>
 );
