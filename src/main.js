@@ -1,50 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+<<<<<<< HEAD
 import Header from './components/header'
+=======
+>>>>>>> 6fd75a40f643a8ccf874b0960e9e8fa4223b966d
 
 import Tenant from './components/Tenant';
 import Manager from './components/Manager';
 import Boss from './components/Boss';
-import TenantInfo from './components/Tenant-Info'
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-
-    this.state = {
-      tenant: {
-        residentName: '',
-        email: '',
-        phone: '',
-        unitNumber: '',
-        property: '',
-        rentStartDate: '',
-        unitVacateDate: '',
-        unitLockChangeDate: '',
-        unitReadyToRentDate: '',
-        moveInDeposit: 0,
-        nonRefundable: 0,
-        rentDue: 0,
-        damagesPayable: 0,
-        cleaningFees: 0,
-        other: '',
-        refundOwed: 0,
-        managerRemarks: '',
-      }
-    }
-  }
-
-    getApp(){
-      return {
-        state: this.state,
-        setState: this.setState.bind(this),
-      };
-    }
-
-   render() {
+  render() {
     return (
       <BrowserRouter>
+<<<<<<< HEAD
         <div>
         <Header />
           <TenantInfo app={this.getApp()} />
@@ -64,8 +34,16 @@ class App extends React.Component {
           </Switch>
         </div>
 
+=======
+        <Switch>
+          <Route exact path={'/boss'} component={Boss} />
+          <Route exact path={'/manager'} component={Manager} />
+          <Route exact path={'/tenant'} component={Tenant} />
+        </Switch>
+>>>>>>> 6fd75a40f643a8ccf874b0960e9e8fa4223b966d
       </BrowserRouter>
     );
-   }
+  }
 }
+
 ReactDOM.render(<App />, document.getElementById('root'));
