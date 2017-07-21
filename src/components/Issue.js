@@ -16,23 +16,39 @@ class Issue extends React.Component {
       approvedByBoss: false,
     };
 
-    this.uploadImage = this.uploadImage.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleConditionChange = this.handleConditionChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleUpload(event) {
     event.preventDefault();
-
+    let file = event.target.localPhotoURI.files;
+    if (!files.length) {
+      return alert('Please choose a file to upload first.');
+    }
+    let file = files[0];
+    let fileName = file.name;
+    let photoKey = albumPhotosKey + fileName;
+    s3.upload({
+      Key: photoKey,
+      Body: file,
+      ACL: 'public-read'
+    }, function(err, data) {
+      if (err) {
+        return alert('There was an error uploading your photo: ', err.message);
+      }
+      alert('Successfully uploaded photo.');
+      viewAlbum(albumName);
+    });
   }
 
   handleInputChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
 
-  handleConditionChange(event) {
-
+  handleConditionChange(newCondition) {
+    this.setState({ conditionCurrent: newCondition });
   }
 
   render() {
@@ -45,9 +61,8 @@ class Issue extends React.Component {
           {this.state.conditionDefault}
         </td>
         <td>
-          <ConditionButton />
+          <ConditionButton handleConditionChange={this.handleConditionChange} />
         </td>
-
       </tr>
       if(this.state.conditionCurrent === 'fail') {
         <tr>
@@ -61,7 +76,7 @@ class Issue extends React.Component {
             </td>
             <td>
               <input
-                type='text'
+                type='file'
                 name='localPhotoURI'
                 value={this.localPhotoURI}
                 onChange={this.handleInputChange}
