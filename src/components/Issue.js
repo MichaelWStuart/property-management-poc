@@ -3,17 +3,8 @@ import React from 'react';
 class Issue extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: props.issue.issueName,
-      conditionDefault: props.issue.conditionDefault,
-      conditionCurrent: 'pass', // pass, noted, fail
-      s3PhotoURI: '',
-      localPhotoURI: '',
-      photoUploaded: false,
-      lineItems: '',
-      approvedByManager: false,
-      approvedByBoss: false,
-    };
+
+    this.path = this.props.app.state.areas[this.props.areaIndex].issues[this.props.issueIndex];
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleConditionChange = this.handleConditionChange.bind(this);
@@ -22,7 +13,11 @@ class Issue extends React.Component {
 
   handleUpload(event) {
     event.preventDefault();
-    this.setState({ localPhotoURI: event.target.localPhotoURI, photoUploaded: true });
+    this.props.app.setState(areas: {
+      issues: {
+        localPhotoURI: event.target.localPhotoURI, photoUploaded: true
+      }
+    });
   }
 
   handleInputChange(event) {
@@ -31,22 +26,35 @@ class Issue extends React.Component {
 
   handleConditionChange(event) {
     event.preventDefault();
-    if(this.state.conditionCurrent === 'pass')
-      this.setState({ conditionCurrent: 'fail' })
-    else if(this.state.conditionCurrent === 'fail')
-      this.setState({ conditionCurrent: 'noted' });
-    else
-      this.setState({ conditionCurrent: 'pass' });
+    console.log(this.path);
+    // let areaIndex = this.props.areaIndex;
+    // let issueIndex = this.props.issueIndex;
+    // if(this.path.conditionCurrent === 'pass') {
+    //   console.log(this.props.app.state)
+    //   this.props.app.setState(state => ({
+    //     [state[areas[areaIndex]].issues[issueIndex].conditionCurrent]: 'fail'
+    //
+    //
+    //   }))
+    // }
+    // else if(issue.conditionCurrent === 'fail')
+    //   this.setState({ conditionCurrent: 'noted' });
+    // else
+    //   this.setState({ conditionCurrent: 'pass' });
+  }
+
+  componentDidUpdate() {
+    console.log(this.props.app.state);
   }
 
   render() {
     return (
       <tr>
         <td>
-          {this.state.issueName}
+          {this.path.issueName}
         </td>
         <td>
-          {this.state.conditionDefault}
+          {this.path.conditionDefault}
         </td>
         <td>
           <input
@@ -57,37 +65,7 @@ class Issue extends React.Component {
             onClick={this.handleConditionChange}
           />
         </td>
-
-      {this.state.conditionCurrent === 'fail' ?
-
-          <form className='uploadImage' onSubmit={this.handleUpload}>
-            <td>
-              <input
-                type='text'
-                name='lineItems'
-                value={this.state.lineItems}
-                onChange={this.handle}
-              />
-            </td>
-            <td>
-              <input
-                type='file'
-                name='localPhotoURI'
-                value={this.localPhotoURI}
-                onChange={this.handleInputChange}
-              />
-              <input
-                type='submit'
-                name='uploadPhoto'
-                value='Upload'
-              />
-              if(this.state.photoUploaded) {
-                <img name='photoDisplay' src={this.state.localPhotoURI} />
-              }
-            </td>
-          </form>
-        : undefined}
-        </tr>
+      </tr>
     );
   }
 }
