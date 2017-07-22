@@ -16,6 +16,7 @@ export default class Tenant extends React.Component {
       <div>
         <Areas
           className='areas'
+          view='tenant'
           areas={this.state.areas} />
         <button>Submit</button>
       </div>
