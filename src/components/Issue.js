@@ -6,9 +6,23 @@ class Issue extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <tr>
-        <td>an issue</td>
+        <td>
+          {this.props.issue.issueName}
+        </td>
+        <td>
+          {this.props.issue.conditionDefault}
+        </td>
+        <td>
+          <input
+            type='button'
+            name='changeCondition'
+            value='Change Condition'
+            className='changeCondition'
+          />
+        </td>
       </tr>
     );
   }

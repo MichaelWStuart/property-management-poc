@@ -33,6 +33,12 @@ const Area = props => (
                   <TableHeaderColumn>Condition</TableHeaderColumn>
                   <TableHeaderColumn>Pass/Fail</TableHeaderColumn>
                 </TableRow>
+                {props.area.issues.map(issue =>
+                  <Issue
+                    key={generateKey()}
+                    issue={issue}
+                  />
+                )}
               </TableBody>
             </Table>
           </MuiThemeProvider>
