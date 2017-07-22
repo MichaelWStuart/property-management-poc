@@ -1,4 +1,5 @@
 import React from 'react';
+import Areas from './Areas';
 
 export default class Boss extends React.Component {
   constructor(props) {
@@ -8,7 +9,11 @@ export default class Boss extends React.Component {
   render() {
     return (
       <div>
-        <h1>Boss View</h1>
+        <Areas
+          className='areas'
+          app={this.props.app}
+          areas={this.props.areas} />
+        <button>Approve</button>
       </div>
     );
   }
