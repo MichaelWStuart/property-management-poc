@@ -14,7 +14,7 @@ import {
 
 const generateKey = () => Math.random();
 
-const Area = props => (
+const TenantContainer = props => (
   <div className='area-title'>
     <MuiThemeProvider>
       <Card>
@@ -42,4 +42,4 @@ const Area = props => (
   </div>
 );
 
-export default Area;
+export default TenantContainer;
