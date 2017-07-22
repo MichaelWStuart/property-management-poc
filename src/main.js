@@ -488,11 +488,11 @@ class App extends React.Component {
             <Route
               exact
               path={'/manager'}
-              component={() => <Manager app={this.getApp()} />} />
+              component={() => <Manager app={this.getApp()} areas={this.state.areas} />} />
             <Route
               exact
               path={'/boss'}
-              component={() => <Boss app={this.getApp()} />} />
+              component={() => <Boss app={this.getApp()} areas={this.state.areas} />} />
           </Switch>
         </div>
 

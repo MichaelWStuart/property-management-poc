@@ -13,10 +13,12 @@ class Issue extends React.Component {
 
   handleUpload(event) {
     event.preventDefault();
-    this.props.app.setState(areas: {
-      issues: {
-        localPhotoURI: event.target.localPhotoURI, photoUploaded: true
-      }
+    this.props.app.setState({
+      areas: {
+        issues: {
+          localPhotoURI: event.target.localPhotoURI, photoUploaded: true,
+        },
+      },
     });
   }
 
