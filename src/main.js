@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/header'
-import TenantInfo from './components/Tenant-Info';
 import Tenant from './components/Tenant';
 import Manager from './components/Manager';
 import Boss from './components/Boss';
@@ -465,13 +464,8 @@ class App extends React.Component {
           ],
         },
       ],
-<<<<<<< HEAD
     }
     this.getApp = this.getApp.bind(this)
-=======
-    };
-    this.getApp = this.getApp.bind(this);
->>>>>>> 1b6608338031d1688e3c77542989f7e5896db515
   }
 
   getApp(){
@@ -484,10 +478,8 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-
         <div>
         <Header app={this.getApp()}/>
-
           <Switch>
             <Route
               exact

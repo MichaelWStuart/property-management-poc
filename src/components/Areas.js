@@ -5,13 +5,11 @@ const generateKey = () => Math.random();
 
 const Areas = props => (
   <ul>
-    {props.areas.map((area, i) =>
+    {props.areas.map(area =>
       <Area
         className='area'
         key={generateKey()}
-        app={props.app}
-        area={area}
-        areaIndex={i} />)}
+        area={area} />)}
   </ul>
 );
 
