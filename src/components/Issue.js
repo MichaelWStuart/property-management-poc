@@ -28,7 +28,6 @@ class Issue extends React.Component {
     this.setState({open: false}); }
 
   render() {
-<<<<<<< HEAD
     console.log(this.props)
     const actions = [
     <FlatButton
@@ -45,8 +44,6 @@ class Issue extends React.Component {
       labelStyle={{color: '#4476b2'}}
     />,
   ];
-=======
->>>>>>> c2df355c9ed6a4024b9a82eb0196031cfe5c333c
     return (
 
       <TableRow>
@@ -74,7 +71,6 @@ class Issue extends React.Component {
           onRequestChange={(open) => this.setState({open})}
           onRequestClose={this.handleClose}
           >
-          Upload a photo
           </Dialog>
       </TableRow>
 
