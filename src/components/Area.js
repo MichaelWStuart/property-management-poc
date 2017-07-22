@@ -1,5 +1,4 @@
 import React from 'react';
-
 const generateKey = () => Math.random();
 
 export const Area = props => (

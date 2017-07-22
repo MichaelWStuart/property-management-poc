@@ -82,9 +82,11 @@ class Issue extends React.Component {
                 name='uploadPhoto'
                 value='Upload'
               />
+
               if(this.state.photoUploaded) {
                 <img name='photoDisplay' src={this.state.localPhotoURI} />
               }
+
             </td>
           </form>
         </tr>

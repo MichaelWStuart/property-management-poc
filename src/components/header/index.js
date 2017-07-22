@@ -11,31 +11,27 @@ import TenantInfo from '../Tenant-Info'
 
 injectTapEventPlugin()
 
-const DotHam = (props) => (
-<IconMenu
-  {...props}
-  iconButtonElement={
-    <IconButton><MenuIcon color={'white'} /></IconButton>
+class Header extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+            open: false
+        }
   }
-    targetOrigin={{horizontal: 'right', vertical: 'top'}}
-    anchorOrigin={{horizontal: 'right', vertical: 'top'}}
->
 
-  <TenantInfo />
-</IconMenu>
-);
+  toggleDrawer() {
+    this.setState({open: !this.state.open})
+    }
+
+  render(){
+    return (
+      <div>
+
+    <TenantInfo open={this.state.open} onToggleDrawer={this.toggleDrawer} app={this.props.app}/>
+    </div>
+  )
+  }
+}
 
 
-const AppNav = () => (
-  <MuiThemeProvider>
-  <AppBar
-    title="Apodment "
-    iconElementRight={<DotHam />}
-    showMenuIconButton={false}
-    style={{height: '5 em', backgroundColor: '#4476b2'}}
-    titleStyle={{fontSize:'2em'}}
-    />
-  </MuiThemeProvider>
-);
-
-export default AppNav;
+export default Header;

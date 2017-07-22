@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/header'
-
 import TenantInfo from './components/Tenant-Info';
 import Tenant from './components/Tenant';
 import Manager from './components/Manager';
@@ -14,7 +13,7 @@ class App extends React.Component {
 
     this.state = {
       tenant: {
-        residentName: '',
+        residentName: 'fdslighjkhfgsdj',
         email: '',
         phone: '',
         unitNumber: '',
@@ -230,6 +229,7 @@ class App extends React.Component {
         },
       ],
     }
+    this.getApp = this.getApp.bind(this)
   }
 
   getApp(){
@@ -242,13 +242,10 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
+
         <div>
-<<<<<<< HEAD
-        <Header />
-          <Area />
-=======
->>>>>>> b6384216cfe233a58db9a52aa0f8276f8766b82f
-          <TenantInfo app={this.getApp()} />
+        <Header app={this.getApp()}/>
+
           <Switch>
            <Route
             exact
