@@ -1,7 +1,6 @@
 {
   "name": "propertymanagement",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "lint": "eslint . --fix",
@@ -33,5 +32,9 @@
   "devDependencies": {
     "eslint": "^4.2.0",
     "eslint-plugin-react": "^7.1.0"
+  },
+  "engines": {
+    "node": "7.x",
+    "yarn": "0.20.3"
   }
 }
