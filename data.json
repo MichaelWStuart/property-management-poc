@@ -445,6 +445,44 @@
       "other": "n/a",
       "refundOwed": 325,
       "managerRemarks": "n/a"
+    },
+    {
+      "residentName": "Mary Johnson",
+      "property": 200,
+      "unitNumber": 203,
+      "phoneNumber": "206-224-0975",
+      "email": "m.johnson@seattlite.com",
+      "startDate": "06-09-2017",
+      "vacateDate": "01-09-2018",
+      "lockChangeDate": "01-12-2018",
+      "readyToRentDate": "01-22-2018",
+      "moveInDeposit": 575,
+      "nonRefundable": true,
+      "rentDue": 850,
+      "damages": "Entry way carpet ripped, bathroom doorknob broken",
+      "cleaningFees": 95,
+      "other": "Stain near ripped carpet",
+      "refundOwed": 480,
+      "managerRemarks": "n/a"
+    },
+    {
+      "residentName": "Pete Willard",
+      "property": 200,
+      "unitNumber": 224,
+      "phoneNumber": "206-133-0944",
+      "email": "petew@ofcourse.com",
+      "startDate": "04-09-2017",
+      "vacateDate": "10-09-2017",
+      "lockChangeDate": "10-12-2017",
+      "readyToRentDate": "10-22-2017",
+      "moveInDeposit": 425,
+      "nonRefundable": true,
+      "rentDue": 549,
+      "damages": "Kitchen sink leak, power outlet in bedroom out",
+      "cleaningFees": 275,
+      "other": "n/a",
+      "refundOwed": 480,
+      "managerRemarks": "Fix power outlet asap"
     }
   ]
 }

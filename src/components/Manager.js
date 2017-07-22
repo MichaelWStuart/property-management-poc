@@ -16,7 +16,9 @@ export default class Manager extends React.Component {
 
   render() {
     return (
-      this.state.tenants.map(tenant => <TenantContainer areas={this.state.areas} tenant={tenant} key={generateKey()} />)
+      <div>
+        {this.state.tenants.map(tenant => <TenantContainer areas={this.state.areas} tenant={tenant} key={generateKey()} />)}
+      </div>
     );
   }
 }

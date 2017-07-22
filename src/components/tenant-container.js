@@ -21,7 +21,7 @@ const TenantContainer = props => (
     <MuiThemeProvider>
       <Card>
         <CardHeader
-          title={props.tenant.name}
+          title={props.tenant.residentName}
           actAsExpander={true}
           showExpandableButton={true}
         />
