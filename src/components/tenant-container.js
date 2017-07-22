@@ -22,6 +22,7 @@ const TenantContainer = props => (
       <Card>
         <CardHeader
           title={props.tenant.residentName}
+          subtitle={`Property: ${props.tenant.property} | Unit Number: ${props.tenant.unitNumber}`}
           actAsExpander={true}
           showExpandableButton={true}
         />

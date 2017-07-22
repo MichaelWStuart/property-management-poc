@@ -22,11 +22,3 @@ export default class Manager extends React.Component {
     );
   }
 }
-
-// <div>
-// <Areas
-// className='areas'
-// app={this.props.app}
-// areas={this.props.areas} />
-// <button>Approve</button>
-// </div>
