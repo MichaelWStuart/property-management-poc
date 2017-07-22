@@ -32,212 +32,454 @@ class App extends React.Component {
         managerRemarks: '',
       },
       areas: [
-        {mainRoom: {
+        {
           areaName: 'Main Room',
           issues: [
             {
               issueName: 'Unit tile and grout clean',
               conditionDefault: 'Clean, no stains or damage',
+              conditionCurrent: 'pass', // pass, noted, fail
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Carpet free of spots, indents, rips, or tears',
               conditionDefault: 'No stains, no indents from furnishings, no damage',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Baseboards wiped down',
               conditionDefault: 'Clean, no marks',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Pin holes filled AND wiped down',
               conditionDefault: 'No holes',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Heaters clean and wall streaks cleaned',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Markes repaired or painted',
               conditionDefault: 'No marks',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Closet organizer wiped down/damage free',
               conditionDefault: 'Clean, no damage, no marks',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
           ],
-        }
         },
 
-        {doors: {
+        {
           areaName: 'Doors',
           issues: [
             {
               issueName: 'Entry free of prints/marks inside and out',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Bath free of prints/marks inside and out',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Knobs working and clean',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
           ],
-        }
         },
 
-        {bed: {
+        {
           areaName: 'Bed',
           issues: [
             {
               issueName: 'Mattress, NO STAINS OR SPOTS',
               conditionDefault: 'Mattress clean, no stains. Cover is new, no spots',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Boxspring new condition',
               conditionDefault: 'In new condition',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Bedframe',
               conditionDefault: 'Clean, no damage',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Table and Chair',
               conditionDefault: 'Both are clean, no damage, no stains or marks',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
           ],
-        }
         },
 
-        {windows: {
+        {
           areaName: 'Windows',
           issues: [
             {
               issueName: 'Windows clean, free of prints',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Screen good',
               conditionDefault: 'No rips or frame damage',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Tracks clean and new-looking',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Blinds clean and new-looking',
               conditionDefault: 'Clean. No bends. Operates as new.',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
           ],
-        }
         },
 
-        {wetbar: {
+        {
           areaName: 'Wetbar',
           issues: [
             {
               issueName: 'Cabinet clean inside and out',
               conditionDefault: 'Clean, no items stored',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Sink wiped down',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Counter-top clean, no marks',
               conditionDefault: 'Clean, no marks or damages',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Backsplash wiped down, no damage',
               conditionDefault: 'Clean, no marks, no dents, no damage',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Faucet clean and free of scum',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Fridge moved and cleaned, inside and out',
               conditionDefault: 'Clean, defrosted, operating as new',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Microwave moved and cleaned, inside and out',
               conditionDefault: 'Clean, operating as new',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
           ],
-        }
         },
 
-        {bathroom: {
+        {
           areaName: 'Bathroom',
           issues: [
             {
               issueName: 'Toilet clean, inside and out, all around',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Shower scrubbed and free of soap scum',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Shower curtain',
               conditionDefault: 'Complimentary - not required to be returned at move-out',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Bath fan/light cover clean',
               conditionDefault: 'Fan cover grates are clean, lights work',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Mirror/cabinet clean',
               conditionDefault: 'Clean. No damage to shelves. Door operates as new',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Baseboards wiped down',
               conditionDefault: 'Clean',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Tile and grout clean, NO STAINS/SCUM!',
               conditionDefault: 'Clean, no stains or damage',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
           ],
-        }
         },
 
-        {pantryLocker: {
+        {
           areaName: 'Pantry Locker',
           issues: [
             {
               issueName: 'Cleaned out and wiped Down',
               conditionDefault: 'Clean. Avenida, Videre, and Pine Only',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
           ],
-        }
         },
 
-        {personalItemsLeft: {
+        {
           areaName: 'Personal Items Left',
           issues: [
             {
               issueName: 'Items left in unit',
               conditionDefault: 'None',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
             {
               issueName: 'Items left on property',
               conditionDefault: 'None',
+              conditionCurrent: 'pass',
+              s3PhotoURI: '',
+              localPhotoURI: '',
+              photoUploaded: false,
+              lineItems: '',
+              approvedByManager: false,
+              approvedByBoss: false,
             },
           ],
-        }
         },
       ],
+<<<<<<< HEAD
     }
     this.getApp = this.getApp.bind(this)
+=======
+    };
+    this.getApp = this.getApp.bind(this);
+>>>>>>> 1b6608338031d1688e3c77542989f7e5896db515
   }
 
   getApp(){
-      return {
-        state: this.state,
-        setState: this.setState.bind(this),
-      };
-    }
+    return {
+      state: this.state,
+      setState: this.setState.bind(this),
+    };
+  }
 
   render() {
     return (
@@ -247,18 +489,18 @@ class App extends React.Component {
         <Header app={this.getApp()}/>
 
           <Switch>
-           <Route
-            exact
-            path={'/tenant'}
-            component={() => <Tenant app={this.getApp()} />} />
-           <Route
-            exact
-            path={'/manager'}
-            component={() => <Manager app={this.getApp()} />} />
-           <Route
-            exact
-            path={'/boss'}
-            component={() => <Boss app={this.getApp()} />} />
+            <Route
+              exact
+              path={'/tenant'}
+              component={() => <Tenant app={this.getApp()} areas={this.state.areas} />} />
+            <Route
+              exact
+              path={'/manager'}
+              component={() => <Manager app={this.getApp()} />} />
+            <Route
+              exact
+              path={'/boss'}
+              component={() => <Boss app={this.getApp()} />} />
           </Switch>
         </div>
 
