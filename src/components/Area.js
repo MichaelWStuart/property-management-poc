@@ -1,6 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
 import Issue from './Issue';
 
+>>>>>>> 1b6608338031d1688e3c77542989f7e5896db515
 const generateKey = () => Math.random();
 
 const Area = props => (

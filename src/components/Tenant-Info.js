@@ -1,34 +1,66 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import MenuIcon from 'material-ui/svg-icons/navigation/menu';
+import Drawer from 'material-ui/Drawer';
+import AppBar from 'material-ui/AppBar';
+import MenuItem from 'material-ui/MenuItem';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import IconButton from 'material-ui/IconButton';
 
-class TenantInfo extends React.Component{
+
+export default class Header extends React.Component {
+
   constructor(props){
     super(props);
+    this.state = {open:false};
   }
 
-  render(){
-    return (
-      <div>
-        <h2 className="tenantName">Resident's Name: {this.props.app.state.tenant.residentName}</h2>
-        <h3 className="property">Property: {this.props.app.state.tenant.property}</h3>
-        <h3 className="unit">Unit #: {this.props.app.state.tenant.unitNumber}</h3>
-        <p className="tenantData">Phone: {this.props.app.state.tenant.phone}</p>
-        <p className="tenantData">Email :{this.props.app.state.tenant.email}</p>
-        <p className="tenantData">Start Date: {this.props.app.state.tenant.rentStartDate}</p>
-        <p className="tenantData">Vacate Date: {this.props.app.state.tenant.unitVacateDate}</p>
-        <p className="tenantData">Lock Change Date: {this.props.app.state.tenant.unitLockChangeDate}</p>
-        <p className="tenantData">Ready to Rent Date: {this.props.app.state.tenant.unitReadyToRentDate}</p>
-        <p className="tenantData">Move-In Deposit: {this.props.app.state.tenant.moveInDeposit}</p>
-        <p className="tenantData">Non-Refundable: {this.props.app.state.tenant.nonRefundable}</p>
-        <p className="tenantData">Rent Due: {this.props.app.state.tenant.rentDue}</p>
-        <p className="tenantData">Damages Payable: {this.props.app.state.tenant.damagesPayable}</p>
-        <p className="tenantData">Cleaning Fees: {this.props.app.state.tenant.cleaningFees}</p>
-        <p className="tenantData">Other: {this.props.app.state.tenant.other}</p>
-        <p className="tenantData">Refund Owed: {this.props.app.state.tenant.refundOwed}</p>
-        <p className="tenantData">Manager Remarks: {this.props.app.state.tenant.managerRemarks}</p>
-      </div>
-    )
-  }
-}
 
-export default TenantInfo
+  handleToggle() {
+    this.setState({open: !this.state.open});
+    console.log("open")
+   }
+  handleClose() { this.setState({open: false}); }
+        render() {
+
+            return (
+                <div>
+                <MuiThemeProvider>
+                <Drawer
+                  docked={false}
+                  width={'30%'}
+                  open={this.state.open}
+                  onRequestChange={(open) => this.setState({open})}
+                  >
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Resident Name</h2></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Property</h2></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><h3>Unit #</h3></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Phone #</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Email</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Start Date</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Vacate Date</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Lock Change Date</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Ready to Rent Date</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Move-In Deposit</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Non-Refundable</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Rent Due</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Damages</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Cleaning Fees</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Other</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Refund Owed</p></MenuItem>
+                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Manager Remarks</p></MenuItem>
+
+                </Drawer>
+                </MuiThemeProvider>
+                <MuiThemeProvider>
+                <AppBar   title="aPodment"
+                titleStyle={{fontSize:'3em', fontWeight: '100'}}
+                  style={{height: '4em', backgroundColor: '#4476b2'}}
+                  onRightIconButtonTouchTap={this.handleToggle.bind(this)}
+                  iconElementRight={<IconButton><MenuIcon /></IconButton>}
+                  showMenuIconButton={false}
+                  />
+                </MuiThemeProvider>
+                </div>
+            );
+        }
+    }

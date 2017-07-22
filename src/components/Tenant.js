@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Areas from './Areas';
 
 export default class Tenant extends React.Component {
