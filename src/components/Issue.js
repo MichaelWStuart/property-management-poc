@@ -66,40 +66,7 @@ class Issue extends React.Component {
           />
         </td>
       </tr>
-<<<<<<< HEAD
-      if(this.state.conditionCurrent === 'fail') {
-        <tr>
-          <form className='uploadImage' onSubmit={this.handleUpload}>
-            <td>
-              <input
-                type='text'
-                name='lineItems'
-                value={this.state.lineItems}
-                onChange={this.handle}
-            </td>
-            <td>
-              <input
-                type='file'
-                name='localPhotoURI'
-                value={this.localPhotoURI}
-                onChange={this.handleInputChange}
-              />
-              <input
-                type='submit'
-                name='uploadPhoto'
-                value='Upload'
-              />
 
-              if(this.state.photoUploaded) {
-                <img name='photoDisplay' src={this.state.localPhotoURI} />
-              }
-
-            </td>
-          </form>
-        </tr>
-      }
-=======
->>>>>>> 1b6608338031d1688e3c77542989f7e5896db515
     );
   }
 }

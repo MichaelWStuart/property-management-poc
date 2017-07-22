@@ -1,9 +1,6 @@
 import React from 'react';
-<<<<<<< HEAD
-=======
-import Issue from './Issue';
+// import Issue from './Issue';
 
->>>>>>> 1b6608338031d1688e3c77542989f7e5896db515
 const generateKey = () => Math.random();
 
 const Area = props => (
@@ -16,16 +13,6 @@ const Area = props => (
         <th>Condition</th>
         <th>Pass/Fail</th>
       </tr>
-      {props.area.issues.map((issue, i) =>
-        <Issue
-          className='issue'
-          key={generateKey()}
-          app={props.app}
-          issue={issue}
-          issueIndex={i}
-          areaIndex={props.areaIndex}
-        />
-      )}
       </tbody>
     </table>
   </li>
