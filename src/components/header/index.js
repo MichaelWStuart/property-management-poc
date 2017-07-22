@@ -26,12 +26,10 @@ class Header extends React.Component{
   render(){
     return (
       <div>
-
-        <TenantInfo open={this.state.open} onToggleDrawer={this.toggleDrawer} app={this.props.app}/>
+        <TenantInfo open={this.state.open} onToggleDrawer={this.toggleDrawer}/>
       </div>
     );
   }
 }
-
 
 export default Header;
