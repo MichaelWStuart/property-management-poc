@@ -17,50 +17,50 @@ export default class Header extends React.Component {
 
   handleToggle() {
     this.setState({open: !this.state.open});
-    console.log("open")
-   }
+    console.log('open');
+  }
   handleClose() { this.setState({open: false}); }
-        render() {
+  render() {
 
-            return (
-                <div>
-                <MuiThemeProvider>
-                <Drawer
-                  docked={false}
-                  width={'30%'}
-                  open={this.state.open}
-                  onRequestChange={(open) => this.setState({open})}
-                  >
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Resident Name</h2></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Property</h2></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><h3>Unit #</h3></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Phone #</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Email</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Start Date</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Vacate Date</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Lock Change Date</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Ready to Rent Date</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Move-In Deposit</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Non-Refundable</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Rent Due</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Damages</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Cleaning Fees</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Other</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Refund Owed</p></MenuItem>
-                  <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Manager Remarks</p></MenuItem>
+    return (
+      <div>
+        <MuiThemeProvider>
+          <Drawer
+            docked={false}
+            width={'30%'}
+            open={this.state.open}
+            onRequestChange={(open) => this.setState({open})}
+          >
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Resident Name</h2></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Property</h2></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><h3>Unit #</h3></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Phone #</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Email</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Start Date</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Vacate Date</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Lock Change Date</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Ready to Rent Date</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Move-In Deposit</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Non-Refundable</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Rent Due</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Damages</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Cleaning Fees</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Other</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Refund Owed</p></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Manager Remarks</p></MenuItem>
 
-                </Drawer>
-                </MuiThemeProvider>
-                <MuiThemeProvider>
-                <AppBar   title="aPodment"
-                titleStyle={{fontSize:'3em', fontWeight: '100'}}
-                  style={{height: '4em', backgroundColor: '#4476b2'}}
-                  onRightIconButtonTouchTap={this.handleToggle.bind(this)}
-                  iconElementRight={<IconButton><MenuIcon /></IconButton>}
-                  showMenuIconButton={false}
-                  />
-                </MuiThemeProvider>
-                </div>
-            );
-        }
-    }
+          </Drawer>
+        </MuiThemeProvider>
+        <MuiThemeProvider>
+          <AppBar   title="aPodment"
+            titleStyle={{fontSize:'3em', fontWeight: '100'}}
+            style={{height: '4em', backgroundColor: '#4476b2'}}
+            onRightIconButtonTouchTap={this.handleToggle.bind(this)}
+            iconElementRight={<IconButton><MenuIcon /></IconButton>}
+            showMenuIconButton={false}
+          />
+        </MuiThemeProvider>
+      </div>
+    );
+  }
+}
