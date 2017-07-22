@@ -16,29 +16,35 @@ const generateKey = () => Math.random();
 
 const Area = props => (
   <div className='area-title'>
-  <MuiThemeProvider>
-  <Card>
-  <CardHeader
-    title={props.area.areaName}
-    actAsExpander={true}
-    showExpandableButton={true}
-  />
-  <CardText expandable={true}>
-  <MuiThemeProvider>
-    <Table>
-      <TableBody
-        displayRowCheckbox={false}>
-      <TableRow>
-        <TableHeaderColumn>Issue Name</TableHeaderColumn>
-        <TableHeaderColumn>Condition</TableHeaderColumn>
-        <TableHeaderColumn>Pass/Fail</TableHeaderColumn>
-        </TableRow>
-      </TableBody>
-    </Table>
-  </MuiThemeProvider>
-  </CardText>
-  </Card>
-  </MuiThemeProvider>
+    <MuiThemeProvider>
+      <Card>
+        <CardHeader
+          title={props.area.areaName}
+          actAsExpander={true}
+          showExpandableButton={true}
+        />
+        <CardText expandable={true}>
+          <MuiThemeProvider>
+            <Table>
+              <TableBody
+                displayRowCheckbox={false}>
+                <TableRow>
+                  <TableHeaderColumn>Issue Name</TableHeaderColumn>
+                  <TableHeaderColumn>Condition</TableHeaderColumn>
+                  <TableHeaderColumn>Pass/Fail</TableHeaderColumn>
+                </TableRow>
+                {props.area.issues.map(issue =>
+                  <Issue
+                    key={generateKey()}
+                    issue={issue}
+                  />
+                )}
+              </TableBody>
+            </Table>
+          </MuiThemeProvider>
+        </CardText>
+      </Card>
+    </MuiThemeProvider>
   </div>
 );
 
