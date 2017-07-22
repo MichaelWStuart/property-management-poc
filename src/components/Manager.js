@@ -3,6 +3,8 @@ import Areas from './Areas';
 import data from '../../data.json';
 import TenantContainer from './tenant-container.js';
 
+const generateKey = () => Math.random();
+
 export default class Manager extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +16,7 @@ export default class Manager extends React.Component {
 
   render() {
     return (
-      <TenantContainer />
+      this.state.tenants.map(tenant => <TenantContainer areas={this.state.areas} tenant={tenant} key={generateKey()} />)
     );
   }
 }
