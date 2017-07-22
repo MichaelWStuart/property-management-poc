@@ -7,7 +7,9 @@ class Issue extends React.Component {
 
   render() {
     return (
-      <tr>an issue</tr>
+      <tr>
+        <td>an issue</td>
+      </tr>
     );
   }
 }

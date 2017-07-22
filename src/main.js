@@ -18,7 +18,6 @@ const App = () => (
         <Route exact path={'/boss'} component={Boss} />
       </Switch>
     </div>
-
   </BrowserRouter>
 );
 
