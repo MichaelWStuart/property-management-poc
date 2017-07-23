@@ -3,7 +3,6 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
-import ImagePreview from 'react-image-preview';
 
 import {
   Table,
@@ -14,13 +13,15 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
+const generateKey = () => Math.random();
+
 class Issue extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {open: false, pictures: {}}
-    this.handleClose = this.handleClose.bind(this)
-    this.handleToggle = this.handleToggle.bind(this)
+    this.state = {open: false, file: '', imagePreviewUrl: ''};
+    this.handleClose = this.handleClose.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleToggle() {
@@ -29,8 +30,32 @@ class Issue extends React.Component {
   handleClose() {
     this.setState({open: false}); }
 
+  _handleImageChange(e) {
+  e.preventDefault();
+
+  let reader = new FileReader();
+  let file = e.target.files[0];
+
+  reader.onloadend = () => {
+    this.setState({
+      file: file,
+      imagePreviewUrl: reader.result
+    });
+  }
+
+  reader.readAsDataURL(file)
+  }
+
   render() {
-    console.log(this.props)
+
+    let {imagePreviewUrl} = this.state;
+    let $imagePreview = null;
+    if (imagePreviewUrl) {
+      $imagePreview = (<img src={imagePreviewUrl} style={{width: '300px'}}/>);
+    } else {
+      $imagePreview = (<div className="previewText">Please Select an Image</div>);
+    }
+
     const actions = [
     <FlatButton
       label="Cancel"
@@ -40,20 +65,28 @@ class Issue extends React.Component {
     />,
     <RaisedButton
       containerElement='label'
-      label='Upload'>
-      <ImagePreview />
+      label='Upload'
+      onTouchTap={this.handleU}>
+      <div className="previewComponent">
+      <form onSubmit={(e)=>this._handleSubmit(e)}>
+        <input className="fileInput"
+          type="file"
+          onChange={(e)=>this._handleImageChange(e)}
+          style={{display:'none'}}/>
+      </form>
+    </div>
     </RaisedButton>
   ];
     return (
 
       <TableRow>
-        <td>
+        <TableRowColumn>
           {this.props.issue.issueName}
-        </td>
-        <td>
+        </TableRowColumn>
+        <TableRowColumn>
           {this.props.issue.conditionDefault}
-        </td>
-        <td>
+        </TableRowColumn>
+        <TableRowColumn>
           <Toggle
             iconStyle={{width: '46px'}}
             thumbStyle={{backgroundColor: 'green'}}
@@ -62,20 +95,22 @@ class Issue extends React.Component {
             trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
             onToggle={this.handleToggle.bind(this)}
           />
-        </td>
+        </TableRowColumn>
         <Dialog
           title='Upload'
-          modal={true}
+          modal={false}
           actions={actions}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
           onRequestClose={this.handleClose}
-          >
-          <ImagePreview />
-          </Dialog>
+          repositionOnUpdate={true}
+          autoScrollBodyContent={true}
+        >
+        <div className="imgPreview">
+          {$imagePreview}
+        </div>
+        </Dialog>
       </TableRow>
-
-
     );
   }
 }
