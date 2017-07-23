@@ -12,14 +12,18 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
+import Area from './Area.js';
+import TenantInfoRow from './tenant-info-row.js';
+
 const generateKey = () => Math.random();
 
-const Area = props => (
-  <div className='area-title'>
+const TenantContainer = props => (
+  <div className='tenant-container-title'>
     <MuiThemeProvider>
       <Card>
         <CardHeader
-          title={props.area.areaName}
+          title={props.tenant.residentName}
+          subtitle={`Property: ${props.tenant.property} | Unit Number: ${props.tenant.unitNumber}`}
           actAsExpander={true}
           showExpandableButton={true}
         />
@@ -28,15 +32,12 @@ const Area = props => (
             <Table>
               <TableBody
                 displayRowCheckbox={false}>
-                <TableRow>
-                  <TableHeaderColumn>Issue Name</TableHeaderColumn>
-                  <TableHeaderColumn>Condition</TableHeaderColumn>
-                  <TableHeaderColumn>Pass/Fail</TableHeaderColumn>
-                </TableRow>
-                {props.area.issues.map(issue =>
-                  <Issue
+                <TenantInfoRow tenant={props.tenant} />
+                {props.areas.map(area =>
+                  <Area
+                    className='area'
                     key={generateKey()}
-                    issue={issue}
+                    area={area}
                   />
                 )}
               </TableBody>
@@ -48,4 +49,4 @@ const Area = props => (
   </div>
 );
 
-export default Area;
+export default TenantContainer;
