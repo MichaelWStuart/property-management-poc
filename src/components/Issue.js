@@ -25,6 +25,7 @@ class Issue extends React.Component {
       file: '',
       imagePreviewUrl: '',
       value: '',
+      toggled: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -42,12 +43,13 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    const newState = this.state.file ? {file: '', imagePreviewUrl: '', value: ''} : {open: !this.state.open};
-    this.setState(newState);
+    const newState = this.state.file ? { file: '', imagePreviewUrl: '', value: '' } : { open: !this.state.open };
+    this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
   }
 
   handleClose() {
-    this.setState({open: false}); }
+    this.setState({open: false, toggled: false});
+  }
 
   _handleImageChange(e) {
     e.preventDefault();
@@ -120,6 +122,7 @@ class Issue extends React.Component {
         </TableRowColumn>
         <TableRowColumn>
           <Toggle
+            toggled={this.state.toggled}
             iconStyle={{width: '46px'}}
             thumbStyle={{backgroundColor: 'green'}}
             trackStyle={{backgroundColor: '#A5D6A7'}}
