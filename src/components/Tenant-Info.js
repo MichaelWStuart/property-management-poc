@@ -54,7 +54,7 @@ export default class Header extends React.Component {
         <MuiThemeProvider>
           <AppBar   title="aPodment"
             titleStyle={{fontSize:'3em', fontWeight: '100'}}
-            style={{height: '4em', backgroundColor: '#4476b2'}}
+            style={{height: '4em', backgroundColor: '#4476b2', position: 'fixed', top: 0}}
             onRightIconButtonTouchTap={this.handleToggle.bind(this)}
             iconElementRight={<IconButton><MenuIcon /></IconButton>}
             showMenuIconButton={false}
