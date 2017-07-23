@@ -31,19 +31,19 @@ class Issue extends React.Component {
     this.setState({open: false}); }
 
   _handleImageChange(e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  let reader = new FileReader();
-  let file = e.target.files[0];
+    let reader = new FileReader();
+    let file = e.target.files[0];
 
-  reader.onloadend = () => {
-    this.setState({
-      file: file,
-      imagePreviewUrl: reader.result
-    });
-  }
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result,
+      });
+    };
 
-  reader.readAsDataURL(file)
+    reader.readAsDataURL(file);
   }
 
   render() {
@@ -57,26 +57,28 @@ class Issue extends React.Component {
     }
 
     const actions = [
-    <FlatButton
-      label="Cancel"
-      primary={true}
-      onTouchTap={this.handleClose}
-      labelStyle={{color: 'red'}}
-    />,
-    <RaisedButton
-      containerElement='label'
-      label='Upload'
-      onTouchTap={this.handleU}>
-      <div className="previewComponent">
-      <form onSubmit={(e)=>this._handleSubmit(e)}>
-        <input className="fileInput"
-          type="file"
-          onChange={(e)=>this._handleImageChange(e)}
-          style={{display:'none'}}/>
-      </form>
-    </div>
-    </RaisedButton>
-  ];
+      <FlatButton
+        key={generateKey()}
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+        labelStyle={{color: 'red'}}
+      />,
+      <RaisedButton
+        key={generateKey()}
+        containerElement='label'
+        label='Upload'
+        onTouchTap={this.handleU}>
+        <div className="previewComponent">
+          <form onSubmit={(e)=>this._handleSubmit(e)}>
+            <input className="fileInput"
+              type="file"
+              onChange={(e)=>this._handleImageChange(e)}
+              style={{display:'none'}}/>
+          </form>
+        </div>
+      </RaisedButton>,
+    ];
     return (
 
       <TableRow>
@@ -106,9 +108,9 @@ class Issue extends React.Component {
           repositionOnUpdate={true}
           autoScrollBodyContent={true}
         >
-        <div className="imgPreview">
-          {$imagePreview}
-        </div>
+          <div className="imgPreview">
+            {$imagePreview}
+          </div>
         </Dialog>
       </TableRow>
     );
