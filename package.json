@@ -7,7 +7,7 @@
     "watch": "webpack-dev-server --inline --hot",
     "build": "webpack",
     "test": "jest",
-    "start": "babel-node src/server.js",
+    "start": "babel-node src/index.js",
     "heroku-postbuild": "webpack -p --config ./webpack.config.production.babel.js --progress"
   },
   "dependencies": {

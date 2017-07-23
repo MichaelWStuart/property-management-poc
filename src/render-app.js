@@ -5,7 +5,7 @@ const renderApp = () =>
       <title>jsk pm</title>
     </head>
     <body>
-      <div class="root"></div>
+      <div id="root"></div>
       <script src="/static/js/bundle.js"></script>
     </body>
   </html>

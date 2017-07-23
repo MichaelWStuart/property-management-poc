@@ -2,7 +2,7 @@ import path from 'path';
 
 export default {
   entry: [
-    './src',
+    './src/main.js',
   ],
   output: {
     filename: 'js/bundle.js',
