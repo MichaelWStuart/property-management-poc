@@ -6,6 +6,7 @@ import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import { ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
+import data from '../../data.json';
 
 const generateKey = () => Math.random();
 
@@ -24,6 +25,13 @@ class Issue extends React.Component {
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentDidUpdate() {
+    console.log(this.props)
+    console.log(data[this.props])
+  }
+
+
 
   handleChange(e) {
     this.setState({ value: e.target.value });
@@ -101,7 +109,10 @@ class Issue extends React.Component {
         primary={true}
         onTouchTap={this.handleSubmit}
         labelStyle={{color: '#4476b2'}}
-      />);
+      />
+    );
+
+    const displayAvatar = () => ({'right': '100px','display': this.state.imagePreviewUrl ? 'block' : 'none'});
 
     return (
 
@@ -109,7 +120,7 @@ class Issue extends React.Component {
         primaryText={this.props.issue.issueName}
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
-        rightAvatar={<Avatar src={this.state.imagePreviewUrl} size={40} style={{right: '100px'}}/>}
+        rightAvatar={<Avatar src={this.state.imagePreviewUrl} size={40} style={displayAvatar()}/>}
         rightToggle={<Toggle
           toggled={this.state.toggled}
           iconStyle={{width: '46px'}}
@@ -117,10 +128,9 @@ class Issue extends React.Component {
           trackStyle={{backgroundColor: '#A5D6A7'}}
           thumbSwitchedStyle={{backgroundColor: 'red'}}
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
-          onToggle={this.handleToggle.bind(this)}/>}
-        >
-
-
+          onToggle={this.handleToggle.bind(this)}
+        />}
+      >
 
         <Dialog
           title='Upload'
