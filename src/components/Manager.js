@@ -23,6 +23,7 @@ export default class Manager extends React.Component {
     return (
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
+        <h1 style={{color: 'white', zIndex: 10}}> Leasing Director's Dashboard </h1>
         <div style={{paddingBottom: '5em'}}>
           {this.state.tenants.map(tenant => <TenantContainer areas={this.state.areas} tenant={tenant} key={generateKey()} />)}
           <div style={{textAlign: 'center', margin: '2em'}}>

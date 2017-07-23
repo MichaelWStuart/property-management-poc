@@ -20,6 +20,7 @@ export default class Boss extends React.Component {
     return (
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
+        <h1 style={{color: 'white', zIndex: 10}}> Director's Dashboard </h1>
         <div style={{paddingBottom: '5em'}}>
           <Areas
             className='areas'

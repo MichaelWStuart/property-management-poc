@@ -19,7 +19,8 @@ export default class Tenant extends React.Component {
     return (
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
-        <div style={{paddingBottom: '5em'}}>
+        <h1 style={{color: 'white', position: 'absolute', top: 0, left: '40vw', zIndex: 10}}> Move-In Inspection </h1>
+        <div style={{paddingBottom: '3em'}}>
           <Areas
             className='areas'
             view='tenant'
