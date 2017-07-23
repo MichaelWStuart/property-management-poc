@@ -8,7 +8,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  entry: `${__dirname}/src/index.js`,
+  entry: `${__dirname}/src/main.js`,
   output: {
     filename: 'bundle-[hash].js',
     path: `${__dirname}/build`,
