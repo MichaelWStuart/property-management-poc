@@ -4,13 +4,10 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
+  List,
+  ListItem,
+  Divider,
+} from 'material-ui/List';
 
 const generateKey = () => Math.random();
 
@@ -25,22 +22,19 @@ const Area = props => (
         />
         <CardText expandable={true}>
           <MuiThemeProvider>
-            <Table>
-              <TableBody
-                displayRowCheckbox={false}>
-                <TableRow>
-                  <TableHeaderColumn>Issue Name</TableHeaderColumn>
-                  <TableHeaderColumn>Condition</TableHeaderColumn>
-                  <TableHeaderColumn>Pass/Fail</TableHeaderColumn>
-                </TableRow>
-                {props.area.issues.map(issue =>
-                  <Issue
-                    key={generateKey()}
-                    issue={issue}
-                  />
-                )}
-              </TableBody>
-            </Table>
+            <List>
+              <ListItem disabled={true}>
+                <span>Issue Name</span>
+                <span>Condition</span>
+                <span>Pass/Fail</span>
+              </ListItem>
+              {props.area.issues.map(issue =>
+                <Issue
+                  key={generateKey()}
+                  issue={issue}
+                />
+              )}
+            </List>
           </MuiThemeProvider>
         </CardText>
       </Card>
