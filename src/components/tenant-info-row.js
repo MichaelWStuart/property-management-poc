@@ -59,7 +59,7 @@ const TenantInfoRow = props => (
               <TableRowColumn style={{height: '45px'}}>{props.tenant.moveInDeposit}</TableRowColumn>
               <TableRowColumn style={{height: '45px'}}>{props.tenant.nonRefundable === 'True' ? 'False' : 'True'}</TableRowColumn>
               <TableRowColumn style={{height: '45px'}}>{props.tenant.rentDue}</TableRowColumn>
-              <TableRowColumn style={{height: '45px'}}>{props.tenant.damages}</TableRowColumn>
+              <TableRowColumn title={props.tenant.damages} style={{height: '45px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap'}}>{props.tenant.damages}</TableRowColumn>
               <TableRowColumn style={{height: '45px'}}>{props.tenant.cleaningFees}</TableRowColumn>
               <TableRowColumn style={{height: '45px'}}>{props.tenant.refundOwed}</TableRowColumn>
             </TableRow>

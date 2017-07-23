@@ -78,6 +78,13 @@ class Issue extends React.Component {
           </form>
         </div>
       </RaisedButton>,
+      <FlatButton
+        key={generateKey()}
+        label="Submit"
+        primary={true}
+        onTouchTap={(e)=>this._handleSubmit(e)}
+        labelStyle={{color: '#4476b2'}}
+      />,
     ];
     return (
 
