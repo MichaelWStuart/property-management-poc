@@ -5,4 +5,4 @@ const app = express();
 
 app.get('*', (req, res) => res.send(renderApp()));
 
-app.listen(8080);
+app.listen(process.env.PORT);
