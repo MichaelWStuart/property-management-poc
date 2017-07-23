@@ -27,7 +27,7 @@ export default class Header extends React.Component {
         <MuiThemeProvider>
           <Drawer
             docked={false}
-            width={'30%'}
+            width={'70%'}
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
           >
