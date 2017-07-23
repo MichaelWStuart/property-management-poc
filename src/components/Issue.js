@@ -16,9 +16,10 @@ class Issue extends React.Component {
     this.state = {
       open: false,
       file: '',
-      imagePreviewUrl: '',
+      localPhotoURI: '',
       value: '',
       toggled: false,
+      conditionCurrent: 'pass',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -27,11 +28,13 @@ class Issue extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.props);
-    console.log(data[this.props]);
+    const podpodpod = Object.assign({}, data);
+    const path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
+    path.conditionCurrent = this.state.conditionCurrent;
+    path.localPhotoURI = this.state.localPhotoURI;
+    path.lineItems = this.state.value;
+    localStorage.setItem('podpodpod', JSON.stringify(podpodpod));
   }
-
-
 
   handleChange(e) {
     this.setState({ value: e.target.value });
@@ -43,12 +46,13 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    const newState = this.state.file ? { file: '', imagePreviewUrl: '', value: '' } : { open: !this.state.open };
+    const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
     this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
   }
 
-  handleClose() {
-    this.setState({open: false, toggled: false});
+  handleClose(e) {
+    const newState = e.target.innerHTML === 'Cancel' ? {file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail'} : {};
+    this.setState(Object.assign({}, newState, {open: false, toggled: false}));
   }
 
   _handleImageChange(e) {
@@ -60,7 +64,7 @@ class Issue extends React.Component {
     reader.onloadend = () => {
       this.setState({
         file: file,
-        imagePreviewUrl: reader.result,
+        localPhotoURI: reader.result,
       });
     };
 
@@ -69,12 +73,12 @@ class Issue extends React.Component {
 
   render() {
 
-    let {imagePreviewUrl} = this.state;
-    let $imagePreview = null;
-    if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} style={{width: '100%'}}/>);
+    let {localPhotoURI} = this.state;
+    let $localPhotoURI = null;
+    if (localPhotoURI) {
+      $localPhotoURI = (<img src={localPhotoURI} style={{width: '100%'}}/>);
     } else {
-      $imagePreview = (<div className="previewText">Please Select an Image</div>);
+      $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
     }
 
     const actions = [
@@ -112,7 +116,7 @@ class Issue extends React.Component {
       />
     );
 
-    const displayAvatar = () => ({'right': '100px','display': this.state.imagePreviewUrl ? 'block' : 'none'});
+    const displayAvatar = () => ({'right': '100px','display': this.state.localPhotoURI ? 'block' : 'none'});
 
     return (
 
@@ -120,7 +124,7 @@ class Issue extends React.Component {
         primaryText={this.props.issue.issueName}
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
-        rightAvatar={<Avatar src={this.state.imagePreviewUrl} size={40} style={displayAvatar()}/>}
+        rightAvatar={<Avatar src={this.state.localPhotoURI} size={40} style={displayAvatar()}/>}
         rightToggle={<Toggle
           toggled={this.state.toggled}
           iconStyle={{width: '46px'}}
@@ -144,7 +148,7 @@ class Issue extends React.Component {
           autoDetectWindowHeight={true}
         >
           <div className="imgPreview" style={{float: 'left'}}>
-            {$imagePreview}
+            {$localPhotoURI}
           </div>
           <TextField
             onChange={this.handleChange}

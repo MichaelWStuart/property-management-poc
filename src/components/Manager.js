@@ -15,10 +15,13 @@ export default class Manager extends React.Component {
   }
 
   componentWillMount() {
-    this.setState(data);
+    this.setState(JSON.parse(localStorage.getItem('podpodpod')));
   }
 
   render() {
+
+    console.log(this.state);
+
     return (
       <div>
         <Header />
