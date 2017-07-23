@@ -22,6 +22,12 @@ class Issue extends React.Component {
     this.state = {open: false, file: '', imagePreviewUrl: ''};
     this.handleClose = this.handleClose.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
+    this.handlePhotoSubmit = this.handlePhotoSubmit.bind(this);
+  }
+
+  handlePhotoSubmit(e) {
+    e.preventDefault();
+    this.setState({ open: false });
   }
 
   handleToggle() {
@@ -78,14 +84,17 @@ class Issue extends React.Component {
           </form>
         </div>
       </RaisedButton>,
+    ];
+
+    this.state.file && actions.push(
       <FlatButton
         key={generateKey()}
         label="Submit"
         primary={true}
-        onTouchTap={(e)=>this._handleSubmit(e)}
+        onTouchTap={this.handlePhotoSubmit}
         labelStyle={{color: '#4476b2'}}
-      />,
-    ];
+      />);
+
     return (
 
       <TableRow>
@@ -105,6 +114,13 @@ class Issue extends React.Component {
             onToggle={this.handleToggle.bind(this)}
           />
         </TableRowColumn>
+        {this.state.file && !this.state.open &&
+          <TableRowColumn>
+            <div className="imgPreview">
+              {$imagePreview}
+            </div>
+          </TableRowColumn>
+        }
         <Dialog
           title='Upload'
           modal={false}
