@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 import Areas from './Areas';
 import Header from './header';
 import Footer from './footer';
@@ -19,7 +20,9 @@ export default class Tenant extends React.Component {
     return (
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
-        <h1 style={{color: 'white', position: 'absolute', top: 0, left: '40vw', zIndex: 10}}> Move-In Inspection </h1>
+        <MediaQuery query='(min-device-width: 1224px)'>
+          <h1 style={{color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Move-In Inspection </h1>
+        </MediaQuery>
         <div style={{paddingBottom: '3em'}}>
           <Areas
             className='areas'

@@ -8,7 +8,6 @@ import Tenant from './components/Tenant';
 import Manager from './components/Manager';
 import Boss from './components/Boss';
 import Landing from './components/landing-page';
-// import './style/main.scss';
 
 injectTapEventPlugin();
 let html = document.getElementById('htmltag');

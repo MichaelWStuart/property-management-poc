@@ -3,6 +3,7 @@ import Areas from './Areas';
 import Header from './header';
 import Footer from './footer';
 import data from '../../data.json';
+import MediaQuery from 'react-responsive';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -20,7 +21,9 @@ export default class Boss extends React.Component {
     return (
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
-        <h1 style={{color: 'white', zIndex: 10}}> Director's Dashboard </h1>
+        <MediaQuery query='(min-device-width: 1224px)'>
+          <h1 style={{color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Director's Dashboard </h1>
+        </MediaQuery>
         <div style={{paddingBottom: '5em'}}>
           <Areas
             className='areas'
