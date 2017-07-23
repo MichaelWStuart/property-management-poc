@@ -146,8 +146,6 @@ class Issue extends React.Component {
             floatingLabelStyle={{color: '#4476b2'}}
             floatingLabelFocusStyle={{color: '#4476b2'}}
             underlineFocusStyle={{borderColor: '#4476b2'}}
-
-
             />
 
         </Dialog>
