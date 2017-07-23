@@ -1,5 +1,6 @@
 import React from 'react';
 import Areas from './Areas';
+import Header from './header';
 import data from '../../data.json';
 
 export default class Tenant extends React.Component {
@@ -14,6 +15,7 @@ export default class Tenant extends React.Component {
   render() {
     return (
       <div>
+        <Header />
         <Areas
           className='areas'
           areas={this.state.areas} />
