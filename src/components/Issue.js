@@ -3,7 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
-import TextField from 'material-ui/TextField';
+import TextField from 'material-ui/TextField'
 
 import {
   Table,
@@ -13,6 +13,7 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+
 
 const generateKey = () => Math.random();
 
@@ -69,7 +70,7 @@ class Issue extends React.Component {
     let {imagePreviewUrl} = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} style={{width: '300px'}}/>);
+      $imagePreview = (<img src={imagePreviewUrl} style={{width: '100%'}}/>);
     } else {
       $imagePreview = (<div className="previewText">Please Select an Image</div>);
     }
@@ -142,6 +143,7 @@ class Issue extends React.Component {
           onRequestClose={this.handleClose}
           repositionOnUpdate={true}
           autoScrollBodyContent={true}
+          autoDetectWindowHeight={true}
         >
           <div className="imgPreview" style={{float: 'left'}}>
             {$imagePreview}
@@ -153,11 +155,11 @@ class Issue extends React.Component {
             floatingLabelText="Describe comment"
             multiLine={true}
             rows={8}
-            style={{float: 'right', width: '50%'}}
+            style={{float: 'right', width: '100%'}}
             floatingLabelStyle={{color: '#4476b2'}}
             floatingLabelFocusStyle={{color: '#4476b2'}}
             underlineFocusStyle={{borderColor: '#4476b2'}}
-          />
+            />
 
         </Dialog>
       </TableRow>
