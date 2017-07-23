@@ -13,6 +13,7 @@ import {
 } from 'material-ui/Table';
 
 import Area from './Area.js';
+import TenantInfoRow from './tenant-info-row.js';
 
 const generateKey = () => Math.random();
 
@@ -31,6 +32,7 @@ const TenantContainer = props => (
             <Table>
               <TableBody
                 displayRowCheckbox={false}>
+                <TenantInfoRow tenant={props.tenant} />
                 {props.areas.map(area =>
                   <Area
                     className='area'
