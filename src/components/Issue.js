@@ -14,6 +14,7 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
+
 const generateKey = () => Math.random();
 
 class Issue extends React.Component {
@@ -24,6 +25,7 @@ class Issue extends React.Component {
       file: '',
       imagePreviewUrl: '',
       value: '',
+      toggled: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -41,12 +43,13 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    const newState = this.state.file ? {file: '', imagePreviewUrl: '', value: ''} : {open: !this.state.open};
-    this.setState(newState);
+    const newState = this.state.file ? { file: '', imagePreviewUrl: '', value: '' } : { open: !this.state.open };
+    this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
   }
 
   handleClose() {
-    this.setState({open: false}); }
+    this.setState({open: false, toggled: false});
+  }
 
   _handleImageChange(e) {
     e.preventDefault();
@@ -69,7 +72,7 @@ class Issue extends React.Component {
     let {imagePreviewUrl} = this.state;
     let $imagePreview = null;
     if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} style={{width: '300px'}}/>);
+      $imagePreview = (<img src={imagePreviewUrl} style={{width: '100%'}}/>);
     } else {
       $imagePreview = (<div className="previewText">Please Select an Image</div>);
     }
@@ -119,6 +122,7 @@ class Issue extends React.Component {
         </TableRowColumn>
         <TableRowColumn>
           <Toggle
+            toggled={this.state.toggled}
             iconStyle={{width: '46px'}}
             thumbStyle={{backgroundColor: 'green'}}
             trackStyle={{backgroundColor: '#A5D6A7'}}
@@ -142,6 +146,7 @@ class Issue extends React.Component {
           onRequestClose={this.handleClose}
           repositionOnUpdate={true}
           autoScrollBodyContent={true}
+          autoDetectWindowHeight={true}
         >
           <div className="imgPreview" style={{float: 'left'}}>
             {$imagePreview}
@@ -153,7 +158,7 @@ class Issue extends React.Component {
             floatingLabelText="Describe comment"
             multiLine={true}
             rows={8}
-            style={{float: 'right', width: '50%'}}
+            style={{float: 'right', width: '100%'}}
             floatingLabelStyle={{color: '#4476b2'}}
             floatingLabelFocusStyle={{color: '#4476b2'}}
             underlineFocusStyle={{borderColor: '#4476b2'}}
