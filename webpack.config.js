@@ -22,7 +22,7 @@ module.exports = {
       meta: [
         {
           name: 'maint',
-          content: ''
+          content: 'module'
         }
       ],
       mobile: true,
