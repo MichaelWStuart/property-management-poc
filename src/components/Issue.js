@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import { ListItem } from 'material-ui/List';
+import Avatar from 'material-ui/Avatar';
 
 
 const generateKey = () => Math.random();
@@ -108,6 +109,8 @@ class Issue extends React.Component {
       <ListItem
         primaryText={this.props.issue.issueName}
         secondaryText={this.props.issue.conditionDefault}
+        hoverColor='rgba(182,202,222,.75)'
+        rightAvatar={<Avatar src={this.state.imagePreviewUrl} size={40} style={{right: '100px'}}/>}
         rightToggle={<Toggle
           toggled={this.state.toggled}
           iconStyle={{width: '46px'}}
@@ -115,16 +118,11 @@ class Issue extends React.Component {
           trackStyle={{backgroundColor: '#A5D6A7'}}
           thumbSwitchedStyle={{backgroundColor: 'red'}}
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
-          hoverColor='rgba(182,202,222,.75)'
           onToggle={this.handleToggle.bind(this)}/>}
         >
 
-        {this.state.file && !this.state.open &&
-          <span>
-            <div className="imgPreview">{$imagePreview}</div>
-            <div>{this.state.value}</div>
-          </span>
-        }
+
+
         <Dialog
           title='Upload'
           modal={false}
