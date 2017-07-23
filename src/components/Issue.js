@@ -32,8 +32,10 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    this.setState({open: !this.state.open});
+    const newState = this.state.file ? {file: ''} : {open: !this.state.open};
+    this.setState(newState);
   }
+
   handleClose() {
     this.setState({open: false}); }
 
