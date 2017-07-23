@@ -12,13 +12,15 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
+const generateKey = () => Math.random();
+
 class Issue extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {open: false}
-    this.handleClose = this.handleClose.bind(this)
-    this.handleToggle = this.handleToggle.bind(this)
+    this.state = {open: false};
+    this.handleClose = this.handleClose.bind(this);
+    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleToggle() {
@@ -28,32 +30,34 @@ class Issue extends React.Component {
     this.setState({open: false}); }
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
     const actions = [
-    <FlatButton
-      label="Cancel"
-      primary={true}
-      onTouchTap={this.handleClose}
-      labelStyle={{color: 'red'}}
-    />,
-    <FlatButton
-      label="Upload"
-      primary={true}
-      disabled={true}
-      onTouchTap={this.handleClose}
-      labelStyle={{color: '#4476b2'}}
-    />,
-  ];
+      <FlatButton
+        key={generateKey()}
+        label="Cancel"
+        primary={true}
+        onTouchTap={this.handleClose}
+        labelStyle={{color: 'red'}}
+      />,
+      <FlatButton
+        key={generateKey()}
+        label="Upload"
+        primary={true}
+        disabled={true}
+        onTouchTap={this.handleClose}
+        labelStyle={{color: '#4476b2'}}
+      />,
+    ];
     return (
 
       <TableRow>
-        <td>
+        <TableRowColumn>
           {this.props.issue.issueName}
-        </td>
-        <td>
+        </TableRowColumn>
+        <TableRowColumn>
           {this.props.issue.conditionDefault}
-        </td>
-        <td>
+        </TableRowColumn>
+        <TableRowColumn>
           <Toggle
             iconStyle={{width: '46px'}}
             thumbStyle={{backgroundColor: 'green'}}
@@ -62,7 +66,7 @@ class Issue extends React.Component {
             trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
             onToggle={this.handleToggle.bind(this)}
           />
-        </td>
+        </TableRowColumn>
         <Dialog
           title='Upload'
           modal={true}
@@ -70,11 +74,9 @@ class Issue extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
           onRequestClose={this.handleClose}
-          >
-          </Dialog>
+        >
+        </Dialog>
       </TableRow>
-
-
     );
   }
 }

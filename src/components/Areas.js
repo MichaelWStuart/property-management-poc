@@ -13,7 +13,7 @@ class Areas extends React.Component {
       return !((this.props.view === 'tenant') && (i === a.length - 1));
     });
     return (
-      <ul>
+      <div>
         {areas.map(area =>
           <Area
             className='area'
@@ -21,7 +21,7 @@ class Areas extends React.Component {
             area={area}
           />
         )}
-      </ul>
+      </div>
     );
   }
 }
