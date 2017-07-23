@@ -3,6 +3,8 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
+import ImagePreview from 'react-image-preview';
+
 import {
   Table,
   TableBody,
@@ -16,7 +18,7 @@ class Issue extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {open: false}
+    this.state = {open: false, pictures: {}}
     this.handleClose = this.handleClose.bind(this)
     this.handleToggle = this.handleToggle.bind(this)
   }
@@ -36,13 +38,11 @@ class Issue extends React.Component {
       onTouchTap={this.handleClose}
       labelStyle={{color: 'red'}}
     />,
-    <FlatButton
-      label="Upload"
-      primary={true}
-      disabled={true}
-      onTouchTap={this.handleClose}
-      labelStyle={{color: '#4476b2'}}
-    />,
+    <RaisedButton
+      containerElement='label'
+      label='Upload'>
+      <ImagePreview />
+    </RaisedButton>
   ];
     return (
 
@@ -71,6 +71,7 @@ class Issue extends React.Component {
           onRequestChange={(open) => this.setState({open})}
           onRequestClose={this.handleClose}
           >
+          <ImagePreview />
           </Dialog>
       </TableRow>
 
