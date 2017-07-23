@@ -17,16 +17,18 @@ export default class Tenant extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
-        <Areas
-          className='areas'
-          view='tenant'
-          areas={this.state.areas} />
-        <div style={{textAlign: 'center', margin: '2em'}}>
-          <MuiThemeProvider>
-            <RaisedButton href="/manager" label="Submit" labelColor={"#4476b2"} buttonStyle={{width: '30vw', border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)'}}/>
-          </MuiThemeProvider>
+        <div style={{paddingBottom: '5em'}}>
+          <Areas
+            className='areas'
+            view='tenant'
+            areas={this.state.areas} />
+          <div style={{textAlign: 'center', margin: '2em'}}>
+            <MuiThemeProvider>
+              <RaisedButton href="/manager" label="Submit" labelColor={"#4476b2"} buttonStyle={{width: '30vw', border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)'}}/>
+            </MuiThemeProvider>
+          </div>
         </div>
         <Footer />
       </div>

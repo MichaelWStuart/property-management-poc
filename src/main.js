@@ -12,10 +12,11 @@ import Landing from './components/landing-page';
 
 injectTapEventPlugin();
 document.body.style.overflow = 'hidden';
+document.body.style.backgroundImage = 'radial-gradient(circle, rgb(182, 202, 222), rgb(51,87,129)';
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, overflow: 'scroll', minHeight: '100%'}}>
       <Switch>
         <Route exact path={'/'} component={Landing} />
         <Route exact path={'/tenant'} component={Tenant} />
