@@ -33,13 +33,29 @@ const TenantContainer = props => (
               <TableBody
                 displayRowCheckbox={false}>
                 <TenantInfoRow tenant={props.tenant} />
-                {props.areas.map(area =>
-                  <Area
-                    className='area'
-                    key={generateKey()}
-                    area={area}
+                <Card>
+                  <CardHeader
+                    title={<strong>Move In Form</strong>}
+                    actAsExpander={true}
+                    showExpandableButton={true}
                   />
-                )}
+                  <CardText expandable={true}>
+                    <MuiThemeProvider>
+                      <Table>
+                        <TableBody
+                          displayRowCheckbox={false}>
+                          {props.areas.map(area =>
+                            <Area
+                              className='area'
+                              key={generateKey()}
+                              area={area}
+                            />
+                          )}
+                        </TableBody>
+                      </Table>
+                    </MuiThemeProvider>
+                  </CardText>
+                </Card>
               </TableBody>
             </Table>
           </MuiThemeProvider>
