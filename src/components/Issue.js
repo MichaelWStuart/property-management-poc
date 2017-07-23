@@ -4,15 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
-
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
+import { ListItem } from 'material-ui/List';
 
 
 const generateKey = () => Math.random();
@@ -113,14 +105,10 @@ class Issue extends React.Component {
 
     return (
 
-      <TableRow>
-        <TableRowColumn>
-          {this.props.issue.issueName}
-        </TableRowColumn>
-        <TableRowColumn>
-          {this.props.issue.conditionDefault}
-        </TableRowColumn>
-        <TableRowColumn>
+      <ListItem hoverColor='rgba(182,202,222,.75)'>
+        <span>{this.props.issue.issueName}</span>
+        <span>{this.props.issue.conditionDefault}</span>
+        <span>
           <Toggle
             toggled={this.state.toggled}
             iconStyle={{width: '46px'}}
@@ -130,12 +118,12 @@ class Issue extends React.Component {
             trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
             onToggle={this.handleToggle.bind(this)}
           />
-        </TableRowColumn>
+        </span>
         {this.state.file && !this.state.open &&
-          <TableRowColumn>
+          <span>
             <div className="imgPreview">{$imagePreview}</div>
             <div>{this.state.value}</div>
-          </TableRowColumn>
+          </span>
         }
         <Dialog
           title='Upload'
@@ -165,7 +153,7 @@ class Issue extends React.Component {
           />
 
         </Dialog>
-      </TableRow>
+      </ListItem>
     );
   }
 }
