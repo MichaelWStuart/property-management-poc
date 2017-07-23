@@ -6,10 +6,7 @@ import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
 import Toggle from 'material-ui/Toggle';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
 import TenantInfo from '../Tenant-Info';
-
-injectTapEventPlugin();
 
 class Header extends React.Component{
   constructor(props){

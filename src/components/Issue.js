@@ -3,7 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
-import TextField from 'material-ui/TextField';
+import TextField from 'material-ui/TextField'
 
 import {
   Table,
@@ -162,7 +162,7 @@ class Issue extends React.Component {
             floatingLabelStyle={{color: '#4476b2'}}
             floatingLabelFocusStyle={{color: '#4476b2'}}
             underlineFocusStyle={{borderColor: '#4476b2'}}
-          />
+            />
 
         </Dialog>
       </TableRow>
