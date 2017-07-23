@@ -105,20 +105,20 @@ class Issue extends React.Component {
 
     return (
 
-      <ListItem hoverColor='rgba(182,202,222,.75)'>
-        <span>{this.props.issue.issueName}</span>
-        <span>{this.props.issue.conditionDefault}</span>
-        <span>
-          <Toggle
-            toggled={this.state.toggled}
-            iconStyle={{width: '46px'}}
-            thumbStyle={{backgroundColor: 'green'}}
-            trackStyle={{backgroundColor: '#A5D6A7'}}
-            thumbSwitchedStyle={{backgroundColor: 'red'}}
-            trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
-            onToggle={this.handleToggle.bind(this)}
-          />
-        </span>
+      <ListItem
+        primaryText={this.props.issue.issueName}
+        secondaryText={this.props.issue.conditionDefault}
+        rightToggle={<Toggle
+          toggled={this.state.toggled}
+          iconStyle={{width: '46px'}}
+          thumbStyle={{backgroundColor: 'green'}}
+          trackStyle={{backgroundColor: '#A5D6A7'}}
+          thumbSwitchedStyle={{backgroundColor: 'red'}}
+          trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
+          hoverColor='rgba(182,202,222,.75)'
+          onToggle={this.handleToggle.bind(this)}/>}
+        >
+
         {this.state.file && !this.state.open &&
           <span>
             <div className="imgPreview">{$imagePreview}</div>
