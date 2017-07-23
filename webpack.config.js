@@ -16,6 +16,18 @@ module.exports = {
   },
   plugins: [
     new HTMLPlugin({template: `${__dirname}/src/index.html` }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: require('html-webpack-template'),
+      meta: [
+        {
+          name: 'maint',
+          content: ''
+        }
+      ],
+      mobile: true,
+      lang: 'en-US',
+    })
     new ExtractPlugin('bundle-[hash].css'),
   ],
   module: {
