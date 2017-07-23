@@ -135,7 +135,7 @@ class Issue extends React.Component {
       >
 
         <Snackbar
-          open={!this.state.open && this.state.imagePreviewUrl ? true : false}
+          open={!this.state.open && this.state.localPhotoURI ? true : false}
           message="Photo Added"
           autoHideDuration={4000}
           onRequestClose={this.handleRequestClose}
