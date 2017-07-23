@@ -19,7 +19,7 @@ const generateKey = () => Math.random();
 const TenantInfoRow = props => (
   <Card>
     <CardHeader
-      title={<strong>Resident Info</strong>}
+      title={<strong>Tenant Info</strong>}
       actAsExpander={true}
       showExpandableButton={true}
     />
