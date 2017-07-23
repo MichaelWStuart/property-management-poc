@@ -3,6 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
+import TextField from 'material-ui/TextField'
 
 import {
   Table,
@@ -131,9 +132,22 @@ class Issue extends React.Component {
           repositionOnUpdate={true}
           autoScrollBodyContent={true}
         >
-          <div className="imgPreview">
+          <div className="imgPreview" style={{float: 'left'}}>
             {$imagePreview}
           </div>
+          <TextField
+            hintText="Comments"
+            floatingLabelText="Describe comment"
+            multiLine={true}
+            rows={8}
+            style={{float: 'right', width: '50%'}}
+            floatingLabelStyle={{color: '#4476b2'}}
+            floatingLabelFocusStyle={{color: '#4476b2'}}
+            underlineFocusStyle={{borderColor: '#4476b2'}}
+
+
+            />
+
         </Dialog>
       </TableRow>
     );
