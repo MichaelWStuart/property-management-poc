@@ -27,8 +27,8 @@ class Issue extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log(this.props)
-    console.log(data[this.props])
+    console.log(this.props);
+    console.log(data[this.props]);
   }
 
 
