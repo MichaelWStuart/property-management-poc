@@ -23,11 +23,7 @@ const Area = props => (
         <CardText expandable={true}>
           <MuiThemeProvider>
             <List>
-              <ListItem disabled={true}>
-                <span>Issue Name</span>
-                <span>Condition</span>
-                <span>Pass/Fail</span>
-              </ListItem>
+              
               {props.area.issues.map(issue =>
                 <Issue
                   key={generateKey()}

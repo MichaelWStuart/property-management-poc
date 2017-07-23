@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import { ListItem } from 'material-ui/List';
+import Avatar from 'material-ui/Avatar';
 
 const generateKey = () => Math.random();
 
@@ -104,26 +105,23 @@ class Issue extends React.Component {
 
     return (
 
-      <ListItem hoverColor='rgba(182,202,222,.75)'>
-        <span>{this.props.issue.issueName}</span>
-        <span>{this.props.issue.conditionDefault}</span>
-        <span>
-          <Toggle
-            toggled={this.state.toggled}
-            iconStyle={{width: '46px'}}
-            thumbStyle={{backgroundColor: 'green'}}
-            trackStyle={{backgroundColor: '#A5D6A7'}}
-            thumbSwitchedStyle={{backgroundColor: 'red'}}
-            trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
-            onToggle={this.handleToggle.bind(this)}
-          />
-        </span>
-        {this.state.file && !this.state.open &&
-          <span>
-            <div className="imgPreview">{$imagePreview}</div>
-            <div>{this.state.value}</div>
-          </span>
-        }
+      <ListItem
+        primaryText={this.props.issue.issueName}
+        secondaryText={this.props.issue.conditionDefault}
+        hoverColor='rgba(182,202,222,.75)'
+        rightAvatar={<Avatar src={this.state.imagePreviewUrl} size={40} style={{right: '100px'}}/>}
+        rightToggle={<Toggle
+          toggled={this.state.toggled}
+          iconStyle={{width: '46px'}}
+          thumbStyle={{backgroundColor: 'green'}}
+          trackStyle={{backgroundColor: '#A5D6A7'}}
+          thumbSwitchedStyle={{backgroundColor: 'red'}}
+          trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
+          onToggle={this.handleToggle.bind(this)}/>}
+        >
+
+
+
         <Dialog
           title='Upload'
           modal={false}
