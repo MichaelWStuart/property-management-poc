@@ -3,6 +3,7 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
+
 import {
   Table,
   TableBody,
@@ -18,7 +19,7 @@ class Issue extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {open: false};
+    this.state = {open: false, file: '', imagePreviewUrl: ''};
     this.handleClose = this.handleClose.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
   }
@@ -29,8 +30,32 @@ class Issue extends React.Component {
   handleClose() {
     this.setState({open: false}); }
 
+  _handleImageChange(e) {
+    e.preventDefault();
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result,
+      });
+    };
+
+    reader.readAsDataURL(file);
+  }
+
   render() {
-    console.log(this.props);
+
+    let {imagePreviewUrl} = this.state;
+    let $imagePreview = null;
+    if (imagePreviewUrl) {
+      $imagePreview = (<img src={imagePreviewUrl} style={{width: '300px'}}/>);
+    } else {
+      $imagePreview = (<div className="previewText">Please Select an Image</div>);
+    }
+
     const actions = [
       <FlatButton
         key={generateKey()}
@@ -39,14 +64,20 @@ class Issue extends React.Component {
         onTouchTap={this.handleClose}
         labelStyle={{color: 'red'}}
       />,
-      <FlatButton
+      <RaisedButton
         key={generateKey()}
-        label="Upload"
-        primary={true}
-        disabled={true}
-        onTouchTap={this.handleClose}
-        labelStyle={{color: '#4476b2'}}
-      />,
+        containerElement='label'
+        label='Upload'
+        onTouchTap={this.handleU}>
+        <div className="previewComponent">
+          <form onSubmit={(e)=>this._handleSubmit(e)}>
+            <input className="fileInput"
+              type="file"
+              onChange={(e)=>this._handleImageChange(e)}
+              style={{display:'none'}}/>
+          </form>
+        </div>
+      </RaisedButton>,
     ];
     return (
 
@@ -69,12 +100,17 @@ class Issue extends React.Component {
         </TableRowColumn>
         <Dialog
           title='Upload'
-          modal={true}
+          modal={false}
           actions={actions}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
           onRequestClose={this.handleClose}
+          repositionOnUpdate={true}
+          autoScrollBodyContent={true}
         >
+          <div className="imgPreview">
+            {$imagePreview}
+          </div>
         </Dialog>
       </TableRow>
     );

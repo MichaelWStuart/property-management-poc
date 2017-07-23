@@ -31,7 +31,7 @@ export default class Header extends React.Component {
             open={this.state.open}
             onRequestChange={(open) => this.setState({open})}
           >
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Resident Name</h2></MenuItem>
+            <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Tenant Name</h2></MenuItem>
             <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Property</h2></MenuItem>
             <MenuItem onTouchTap={this.handleClose.bind(this)}><h3>Unit #</h3></MenuItem>
             <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Phone #</p></MenuItem>

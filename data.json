@@ -428,7 +428,7 @@
   ],
   "tenants": [
     {
-      "residentName": "Bill Walters",
+      "tenantName": "Bill Walters",
       "property": 201,
       "unitNumber": 105,
       "phoneNumber": "425-515-9255",
@@ -447,7 +447,7 @@
       "managerRemarks": "n/a"
     },
     {
-      "residentName": "Mary Johnson",
+      "tenantName": "Mary Johnson",
       "property": 200,
       "unitNumber": 203,
       "phoneNumber": "206-224-0975",
@@ -466,7 +466,7 @@
       "managerRemarks": "n/a"
     },
     {
-      "residentName": "Pete Willard",
+      "tenantName": "Pete Willard",
       "property": 200,
       "unitNumber": 224,
       "phoneNumber": "206-133-0944",
