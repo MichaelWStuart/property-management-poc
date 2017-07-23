@@ -8,7 +8,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  entry: `${__dirname}/src/main.js`,
+  entry: `${__dirname}/src/index.js`,
   output: {
     filename: 'bundle-[hash].js',
     path: `${__dirname}/build`,
@@ -24,10 +24,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractPlugin.extract(['css-loader', 'sass-loader']),
       },
     ],
   },
