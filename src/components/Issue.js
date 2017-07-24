@@ -198,7 +198,6 @@ class Issue extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
           onRequestClose={this.handleClose}
-          repositionOnUpdate={true}
           autoScrollBodyContent={true}
           autoDetectWindowHeight={true}
         >
