@@ -13,10 +13,10 @@ class Footer extends React.Component{
         </MediaQuery>
         <MediaQuery query='(min-device-width: 1224px)'>
           <div style={{display: 'inlineBlock', float: 'left', fontSize: '0.7em', width: '(100/3)%', textAlign: 'left', paddingLeft: '5vw'}}>
-            <p style={{fontFamily: 'Roboto', margin: 0}}>Office Hours: 9:00 am to 5:00 pm PT (weekdays)</p>
-            <p style={{fontFamily: 'Roboto', margin: 0}}>Mail: P.O. Box 95558, Seattle, WA 98145</p>
-            <p style={{fontFamily: 'Roboto', margin: 0}}>Phone: (206) 801-3570</p>
-            <p style={{fontFamily: 'Roboto', margin: 0}}>Fax: (206) 322-3374</p>
+            <p style={{fontFamily: 'Roboto', fontWeight: 100, margin: 0}}>Office Hours: 9:00 am to 5:00 pm PT (weekdays)</p>
+            <p style={{fontFamily: 'Roboto', fontWeight: 100, margin: 0}}>Mail: P.O. Box 95558, Seattle, WA 98145</p>
+            <p style={{fontFamily: 'Roboto', fontWeight: 100, margin: 0}}>Phone: (206) 801-3570</p>
+            <p style={{fontFamily: 'Roboto', fontWeight: 100, margin: 0}}>Fax: (206) 322-3374</p>
           </div>
         </MediaQuery>
         <MediaQuery query='(min-device-width: 1224px)'>

@@ -21,7 +21,7 @@ export default class Tenant extends React.Component {
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
         <MediaQuery query='(min-device-width: 1224px)'>
-          <h1 style={{color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Move-In Inspection </h1>
+          <h1 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Move-In Inspection </h1>
         </MediaQuery>
         <div style={{paddingBottom: '4em'}}>
           <Areas

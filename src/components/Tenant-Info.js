@@ -51,12 +51,12 @@ export default class Header extends React.Component {
 
           </Drawer>
         </MuiThemeProvider>
-        <h1 style={{color: 'white', fontFamily: 'Roboto', position: 'absolute', top: '-0.5em', left: '0.5em', zIndex: 10}}>a
+        <h2 style={{color: 'white', fontFamily: 'Roboto', fontWeight: 100, position: 'absolute', top: '-0.5em', left: '0.5em', zIndex: 10}}>a
           <img
             src='https://s3-us-west-2.amazonaws.com/podpodpod/pod-logo-smaller.png'
             style={{height: '1.5em', position: 'relative', top: '0.2em'}}
           />
-          ment</h1>
+        ment</h2>
         <MuiThemeProvider>
           <AppBar
             titleStyle={{fontSize:'3em', fontWeight: '100'}}
