@@ -4,9 +4,9 @@ import MediaQuery from 'react-responsive';
 class Footer extends React.Component{
   render(){
     return (
-      <div style={{color: 'white', textAlign: 'center', position: 'absolute', bottom: 0, left: 0, zIndex: 10, height: '4em', width: '100%', padding: '0.5em', backgroundColor: '#4476b2'}}>
+      <div style={{color: 'white', textAlign: 'center', position: 'absolute', bottom: 0, left: 0, zIndex: 10, height: '4em', width: '100%', paddingTop: '0.5em', paddingBottom: '0.5em', backgroundColor: '#4476b2'}}>
         <MediaQuery query='(min-device-width: 1224px)'>
-          <div style={{display: 'inlineBlock', float: 'left', margin: '0 auto', width: '(100/3)%', height: '3em', transform: 'translateY(-1em)'}}>
+          <div style={{display: 'inlineBlock', float: 'left', margin: '0 auto', paddingLeft: '1em', width: '(100/3)%', height: '3em', transform: 'translateY(-1em)'}}>
             <img src='https://s3-us-west-2.amazonaws.com/podpodpod/calhoun-logo-alpha-white.png' style={{height: '3em'}} />
             <p style={{fontFamily: 'Roboto', fontSize: '0.7em', transform: 'translateY(-1.2em)'}}>© 2017 - All Rights Reserved.</p>
           </div>
