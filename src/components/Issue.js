@@ -136,7 +136,7 @@ class Issue extends React.Component {
         primaryText={this.props.issue.issueName}
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
-        rightToggle={<Toggle
+        rightToggle={<span><Toggle
           toggled={this.state.toggled}
           iconStyle={{width: '46px'}}
           thumbStyle={{backgroundColor: 'green'}}
@@ -144,8 +144,12 @@ class Issue extends React.Component {
           thumbSwitchedStyle={{backgroundColor: 'red'}}
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
           onToggle={this.handleToggle.bind(this)}
-        />}
+        />
+        {localPhotoURI ? <img src={localPhotoURI} style={{width: '30px', height: '30px'}} /> : null}</span>
+        }
       >
+
+
 
         <Snackbar
           open={!this.state.open && this.state.localPhotoURI ? true : false}
