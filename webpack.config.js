@@ -11,7 +11,7 @@ module.exports = {
   },
   entry: `${__dirname}/src/main.js`,
   output: {
-    publicPath: '/static',
+    publicPath: '/',
     path: `${__dirname}/build`,
     filename: 'bundle-[hash].js',
   },
