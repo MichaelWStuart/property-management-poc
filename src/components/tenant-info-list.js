@@ -48,8 +48,48 @@ const TenantInfoList = props => (
             hoverColor='rgba(182,202,222,.75)'
           />
           <ListItem
-            primaryText='Lease Start Date'
-            secondaryText={props.tenant.startDate}
+            primaryText='Ready To Rent Date'
+            secondaryText={props.tenant.readyToRentDate}
+            hoverColor='rgba(182,202,222,.75)'
+          />
+          <ListItem
+            primaryText='Move In Deposit'
+            secondaryText={props.tenant.moveInDeposit}
+            hoverColor='rgba(182,202,222,.75)'
+          />
+          <ListItem
+            primaryText='Deposit Refundable'
+            secondaryText={props.tenant.nonRefundable === 'True' ? 'No' : 'Yes'}
+            hoverColor='rgba(182,202,222,.75)'
+          />
+          <ListItem
+            primaryText='Rent Due'
+            secondaryText={props.tenant.rentDue}
+            hoverColor='rgba(182,202,222,.75)'
+          />
+          <ListItem
+            primaryText='Damages'
+            secondaryText={props.tenant.damages}
+            hoverColor='rgba(182,202,222,.75)'
+          />
+          <ListItem
+            primaryText='Cleaning Fees'
+            secondaryText={props.tenant.cleaningFees}
+            hoverColor='rgba(182,202,222,.75)'
+          />
+          <ListItem
+            primaryText='Refund Owed'
+            secondaryText={props.tenant.refundOwed}
+            hoverColor='rgba(182,202,222,.75)'
+          />
+          <ListItem
+            primaryText='Manager Remarks'
+            secondaryText={props.tenant.managerRemarks}
+            hoverColor='rgba(182,202,222,.75)'
+          />
+          <ListItem
+            primaryText='Other'
+            secondaryText={props.tenant.other}
             hoverColor='rgba(182,202,222,.75)'
           />
         </List>

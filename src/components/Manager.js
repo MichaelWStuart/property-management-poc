@@ -17,7 +17,11 @@ export default class Manager extends React.Component {
   }
 
   componentWillMount() {
-    this.setState(JSON.parse(localStorage.getItem('podpodpod')));
+    let parsed = JSON.parse(localStorage.getItem('podpodpod'));
+    if(parsed)
+      this.setState(parsed);
+    else
+      console.log('no localstorage set');
   }
 
   render() {
