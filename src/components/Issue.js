@@ -181,7 +181,7 @@ class Issue extends React.Component {
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
           onToggle={this.handleToggle.bind(this)}
         />
-        {localPhotoURI && (this.props.location.pathname !== '/tenant') && <img src={localPhotoURI} style={{width: '30px', height: '30px'}} />}
+        {localPhotoURI && this.state.toggled === false && (this.props.location.pathname !== '/tenant') && <img src={localPhotoURI} style={{width: '30px', height: '30px'}} />}
         </span>
         }
       >
