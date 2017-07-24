@@ -23,6 +23,7 @@ class Issue extends React.Component {
       value: '',
       toggled: false,
       conditionCurrent: 'pass',
+      disabledSubmit: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -59,7 +60,7 @@ class Issue extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ value: e.target.value });
+    this.setState({ value: e.target.value, disabledSubmit: false });
   }
 
   handleSubmit(e) {
@@ -156,6 +157,7 @@ class Issue extends React.Component {
         key={generateKey()}
         label="Submit"
         primary={true}
+        disabled={this.state.disabledSubmit}
         onTouchTap={this.handleSubmit}
         labelStyle={{color: '#4476b2'}}
       />
@@ -214,6 +216,7 @@ class Issue extends React.Component {
             floatingLabelStyle={{color: '#4476b2'}}
             floatingLabelFocusStyle={{color: '#4476b2'}}
             underlineFocusStyle={{borderColor: '#4476b2'}}
+            errorText='Comment Required'
           />
 
         </Dialog>
