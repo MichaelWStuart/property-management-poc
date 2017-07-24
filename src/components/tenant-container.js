@@ -29,7 +29,8 @@ const TenantContainer = props => (
           actAsExpander={props.tenantIndex === 0 ? true : false}
           showExpandableButton={props.tenantIndex === 0 ? true : false}
         />
-        <CardText expandable={true}>
+        <CardText expandable={true}
+        style={{padding: '0'}}>
           <MuiThemeProvider>
             <Table>
               <TableBody
