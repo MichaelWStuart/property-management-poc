@@ -15,7 +15,6 @@ class Landing extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      open: false,
       triggered: false,
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
