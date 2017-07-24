@@ -69,8 +69,8 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    if(this.props.comingFromBoss === true) {
-      this.setState({ toggled: !this.state.toggled });
+    if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
+      this.setState({ localPhotoURI: '', toggled: !this.state.toggled });
     } else {
       const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
       this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
@@ -99,6 +99,7 @@ class Issue extends React.Component {
   }
 
   render() {
+    let podpodpod, areaIndex, issueIndex, path;
     let {localPhotoURI} = this.state;
     let $localPhotoURI = null;
 
@@ -108,23 +109,20 @@ class Issue extends React.Component {
       $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
     }
 
-    if(this.props.comingFromBoss) {
-      let podpodpod, path, areaIndex, issueIndex;
-      if(this.props.comingFromBoss === true) {
-        podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
-        podpodpod.areas.forEach((area, aI) => {
-          if(area.areaName === this.props.area.areaName) {
-            area.issues.forEach((issue, iI) => {
-              if(issue.issueName === this.props.issue.issueName) {
-                areaIndex = aI;
-                issueIndex = iI;
-              }
-            });
-          }
-        });
-        path = podpodpod.areas[areaIndex].issues[issueIndex];
-        localPhotoURI = path.localPhotoURI;
-      }
+    if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
+      podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
+      podpodpod.areas.forEach((area, aI) => {
+        if(area.areaName === this.props.area.areaName) {
+          area.issues.forEach((issue, iI) => {
+            if(issue.issueName === this.props.issue.issueName) {
+              areaIndex = aI;
+              issueIndex = iI;
+            }
+          });
+        }
+      });
+      path = podpodpod.areas[areaIndex].issues[issueIndex];
+      localPhotoURI = path.localPhotoURI;
     }
 
     const actions = [
@@ -170,7 +168,7 @@ class Issue extends React.Component {
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
         rightToggle={<span><Toggle
-          toggled={this.state.toggled}
+          toggled={(this.props.location.pathname === '/manager' && localPhotoURI) ? true : this.state.toggled}
           iconStyle={{width: '46px'}}
           thumbStyle={{backgroundColor: 'green'}}
           trackStyle={{backgroundColor: '#A5D6A7'}}
