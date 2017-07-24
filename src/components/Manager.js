@@ -27,7 +27,7 @@ export default class Manager extends React.Component {
         <MediaQuery query='(min-device-width: 1224px)'>
           <h1 style={{color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Leasing Director's Dashboard </h1>
         </MediaQuery>
-        <div style={{paddingBottom: '5em'}}>
+        <div style={{paddingBottom: '4em'}}>
           {this.state.tenants.map(tenant => <TenantContainer areas={this.state.areas} tenant={tenant} key={generateKey()} />)}
           <div style={{textAlign: 'center', margin: '2em'}}>
             <MuiThemeProvider>

@@ -4,7 +4,7 @@ import MediaQuery from 'react-responsive';
 class Footer extends React.Component{
   render(){
     return (
-      <div style={{color: 'white', textAlign: 'center', position: 'absolute', bottom: 0, left: 0, zIndex: 10, height: '3em', width: '100%', padding: '0.5em', backgroundColor: '#4476b2'}}>
+      <div style={{color: 'white', textAlign: 'center', position: 'absolute', bottom: 0, left: 0, zIndex: 10, height: '4em', width: '100%', padding: '0.5em', backgroundColor: '#4476b2'}}>
         <MediaQuery query='(min-device-width: 1224px)'>
           <div style={{display: 'inlineBlock', float: 'left', margin: '0 auto', width: '(100/3)%', height: '3em', transform: 'translateY(-1em)'}}>
             <img src='https://s3-us-west-2.amazonaws.com/podpodpod/calhoun-logo-alpha-white.png' style={{height: '3em'}} />
@@ -12,7 +12,7 @@ class Footer extends React.Component{
           </div>
         </MediaQuery>
         <MediaQuery query='(min-device-width: 1224px)'>
-          <div style={{display: 'inlineBlock', float: 'left', fontSize: '0.7em', width: '(100/3)%', textAlign: 'left', paddingLeft: '5vw', transform: 'translateY(-0.5em)'}}>
+          <div style={{display: 'inlineBlock', float: 'left', fontSize: '0.7em', width: '(100/3)%', textAlign: 'left', paddingLeft: '5vw'}}>
             <p style={{margin: 0}}>Office Hours: 9:00 am to 5:00 pm PT (weekdays)</p>
             <p style={{margin: 0}}>Mail: P.O. Box 95558, Seattle, WA 98145</p>
             <p style={{margin: 0}}>Phone: (206) 801-3570</p>
@@ -20,7 +20,7 @@ class Footer extends React.Component{
           </div>
         </MediaQuery>
         <MediaQuery query='(min-device-width: 1224px)'>
-          <div style={{width: '(100/3)%', display: 'inlineBlock', float: 'right', textAlign: 'center'}}>
+          <div style={{width: '(100/3)%', display: 'inlineBlock', float: 'right', textAlign: 'center', paddingTop: '0.5em'}}>
             <a href='https://twitter.com/aPodments'>
               <i className="fa fa-twitter-square" aria-hidden="true" style={{color: 'white', fontSize: '1.5em', padding: '0.2em'}}>
               </i>

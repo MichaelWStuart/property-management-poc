@@ -23,7 +23,7 @@ export default class Tenant extends React.Component {
         <MediaQuery query='(min-device-width: 1224px)'>
           <h1 style={{color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Move-In Inspection </h1>
         </MediaQuery>
-        <div style={{paddingBottom: '3em'}}>
+        <div style={{paddingBottom: '4em'}}>
           <Areas
             className='areas'
             view='tenant'

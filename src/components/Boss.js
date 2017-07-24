@@ -24,7 +24,7 @@ export default class Boss extends React.Component {
         <MediaQuery query='(min-device-width: 1224px)'>
           <h1 style={{color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Director's Dashboard </h1>
         </MediaQuery>
-        <div style={{paddingBottom: '5em'}}>
+        <div style={{paddingBottom: '4em'}}>
           <Areas
             className='areas'
             areas={this.state.areas} />
