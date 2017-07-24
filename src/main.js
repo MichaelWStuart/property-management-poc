@@ -10,9 +10,7 @@ import Boss from './components/Boss';
 import Landing from './components/landing-page';
 
 injectTapEventPlugin();
-let html = document.getElementById('htmltag');
 
-html.style.height = '100vh';
 document.body.style.height = '100%';
 document.body.style.overflow = 'hidden';
 
