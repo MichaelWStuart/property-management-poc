@@ -95,14 +95,12 @@ class Issue extends React.Component {
     } else {
       $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
     }
-    
+
     if(this.props.comingFromBoss) {
       let podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
       let path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
       localPhotoURI = path.localPhotoURI;
     }
-
-
 
     const actions = [
       <FlatButton
