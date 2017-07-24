@@ -10,10 +10,15 @@ import Boss from './components/Boss';
 import Landing from './components/landing-page';
 
 injectTapEventPlugin();
+let html = document.getElementById('htmltag');
+
+html.style.height = '100vh';
+document.body.style.height = '100%';
+document.body.style.overflow = 'hidden';
 
 const App = () => (
   <BrowserRouter>
-    <div>
+    <div style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, overflow: 'scroll', minHeight: '101%'}}>
       <Switch>
         <Route exact path={'/'} component={Landing} />
         <Route exact path={'/tenant'} component={Tenant} />

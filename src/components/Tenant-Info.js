@@ -51,10 +51,16 @@ export default class Header extends React.Component {
 
           </Drawer>
         </MuiThemeProvider>
+        <h2 style={{color: 'white', fontFamily: 'Roboto', fontWeight: 100, position: 'absolute', top: '-0.5em', left: '0.5em', zIndex: 10}}>a
+          <img
+            src='https://s3-us-west-2.amazonaws.com/podpodpod/pod-logo-smaller.png'
+            style={{height: '1.5em', position: 'relative', top: '0.2em'}}
+          />
+        ment</h2>
         <MuiThemeProvider>
-          <AppBar   title="aPodment"
+          <AppBar
             titleStyle={{fontSize:'3em', fontWeight: '100'}}
-            style={{height: '4em', backgroundColor: '#4476b2', position: 'fixed', top: 0}}
+            style={{height: '4em', backgroundColor: '#4476b2', zIndex: 9}}
             onRightIconButtonTouchTap={this.handleToggle.bind(this)}
             iconElementRight={<IconButton><MenuIcon /></IconButton>}
             showMenuIconButton={false}
@@ -64,3 +70,6 @@ export default class Header extends React.Component {
     );
   }
 }
+
+
+//title="aPodment"
