@@ -9,6 +9,7 @@ import { ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import data from '../../data.json';
 import Snackbar from 'material-ui/Snackbar';
+import { withRouter } from 'react-router-dom';
 
 const generateKey = () => Math.random();
 
@@ -22,6 +23,7 @@ class Issue extends React.Component {
       value: '',
       toggled: false,
       conditionCurrent: 'pass',
+      disabledSubmit: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -32,7 +34,7 @@ class Issue extends React.Component {
 
   componentDidUpdate() {
     let podpodpod, path, areaIndex, issueIndex;
-    if(this.props.comingFromBoss === true) {
+    if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
       podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
       podpodpod.areas.forEach((area, aI) => {
         if(area.areaName === this.props.area.areaName) {
@@ -45,7 +47,12 @@ class Issue extends React.Component {
         }
       });
       path = podpodpod.areas[areaIndex].issues[issueIndex];
-      path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
+      if(this.props.location.pathname === '/manager') {
+        path.conditionCurrent = path.conditionCurrent === 'pass' ? 'fail' : 'pass';
+        path.localPhotoURI = '';
+      }
+      else
+        path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
       console.log('podpodpod', podpodpod);
     } else {
       podpodpod = Object.assign({}, data);
@@ -58,7 +65,7 @@ class Issue extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ value: e.target.value });
+    this.setState({ value: e.target.value, disabledSubmit: false });
   }
 
   handleSubmit(e) {
@@ -67,8 +74,8 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    if(this.props.comingFromBoss === true) {
-      this.setState({ toggled: !this.state.toggled });
+    if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
+      this.setState({ localPhotoURI: '', toggled: !this.state.toggled });
     } else {
       const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
       this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
@@ -97,6 +104,7 @@ class Issue extends React.Component {
   }
 
   render() {
+    let podpodpod, areaIndex, issueIndex, path;
     let {localPhotoURI} = this.state;
     let $localPhotoURI = null;
 
@@ -106,23 +114,20 @@ class Issue extends React.Component {
       $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
     }
 
-    if(this.props.comingFromBoss) {
-      let podpodpod, path, areaIndex, issueIndex;
-      if(this.props.comingFromBoss === true) {
-        podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
-        podpodpod.areas.forEach((area, aI) => {
-          if(area.areaName === this.props.area.areaName) {
-            area.issues.forEach((issue, iI) => {
-              if(issue.issueName === this.props.issue.issueName) {
-                areaIndex = aI;
-                issueIndex = iI;
-              }
-            });
-          }
-        });
-        path = podpodpod.areas[areaIndex].issues[issueIndex];
-        localPhotoURI = path.localPhotoURI;
-      }
+    if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
+      podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
+      podpodpod.areas.forEach((area, aI) => {
+        if(area.areaName === this.props.area.areaName) {
+          area.issues.forEach((issue, iI) => {
+            if(issue.issueName === this.props.issue.issueName) {
+              areaIndex = aI;
+              issueIndex = iI;
+            }
+          });
+        }
+      });
+      path = podpodpod.areas[areaIndex].issues[issueIndex];
+      localPhotoURI = path.localPhotoURI;
     }
 
     const actions = [
@@ -155,6 +160,7 @@ class Issue extends React.Component {
         key={generateKey()}
         label="Submit"
         primary={true}
+        disabled={this.state.disabledSubmit}
         onTouchTap={this.handleSubmit}
         labelStyle={{color: '#4476b2'}}
       />
@@ -167,7 +173,7 @@ class Issue extends React.Component {
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
         rightToggle={<span><Toggle
-          toggled={this.state.toggled}
+          toggled={(this.props.location.pathname === '/manager' && localPhotoURI) ? !this.state.toggled : this.state.toggled}
           iconStyle={{width: '46px'}}
           thumbStyle={{backgroundColor: 'green'}}
           trackStyle={{backgroundColor: '#A5D6A7'}}
@@ -175,7 +181,7 @@ class Issue extends React.Component {
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
           onToggle={this.handleToggle.bind(this)}
         />
-        {localPhotoURI ? <img src={localPhotoURI} style={{width: '30px', height: '30px'}} /> : null}
+        {localPhotoURI && this.state.toggled === false && (this.props.location.pathname !== '/tenant') && <img src={localPhotoURI} style={{width: '30px', height: '30px'}} />}
         </span>
         }
       >
@@ -190,16 +196,17 @@ class Issue extends React.Component {
 
         <Dialog
           title='Upload'
-          modal={false}
+          modal={true}
           actions={actions}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
           onRequestClose={this.handleClose}
-          repositionOnUpdate={true}
           autoScrollBodyContent={true}
           autoDetectWindowHeight={true}
+          repositionOnUpdate={false}
+          style={{paddingTop: '0'}}
         >
-          <div className="imgPreview" style={{float: 'left'}}>
+          <div className="imgPreview" style={{float: 'left', height: '100%'}}>
             {$localPhotoURI}
           </div>
           <TextField
@@ -208,11 +215,12 @@ class Issue extends React.Component {
             hintText="Comments"
             floatingLabelText="Describe comment"
             multiLine={true}
-            rows={8}
+            rows={2}
             style={{float: 'right', width: '100%'}}
             floatingLabelStyle={{color: '#4476b2'}}
             floatingLabelFocusStyle={{color: '#4476b2'}}
             underlineFocusStyle={{borderColor: '#4476b2'}}
+            errorText='Comment Required'
           />
 
         </Dialog>
@@ -221,4 +229,4 @@ class Issue extends React.Component {
   }
 }
 
-export default Issue;
+export default withRouter(Issue);
