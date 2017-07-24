@@ -166,6 +166,8 @@ class Issue extends React.Component {
       />
     );
 
+    const photoURIStyle = this.props.location.pathname === '/boss' ? {display: 'none'} : {width: '30px', height: '30px'};
+
     return (
 
       <ListItem
@@ -181,7 +183,7 @@ class Issue extends React.Component {
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
           onToggle={this.handleToggle.bind(this)}
         />
-        {localPhotoURI && this.state.toggled === false && (this.props.location.pathname !== '/tenant') && <img src={localPhotoURI} style={{width: '30px', height: '30px'}} />}
+        {localPhotoURI && this.state.toggled === false && (this.props.location.pathname !== '/tenant') && <img src={localPhotoURI} style={photoURIStyle} />}
         </span>
         }
       >
@@ -224,6 +226,8 @@ class Issue extends React.Component {
           />
 
         </Dialog>
+        {localPhotoURI && this.state.toggled === false && (this.props.location.pathname === '/boss') && <img src={localPhotoURI} style={{width: '100%', height: '100%'}} />}
+
       </ListItem>
     );
   }
