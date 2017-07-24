@@ -94,7 +94,7 @@ class Issue extends React.Component {
       $localPhotoURI = (<img src={localPhotoURI} style={{width: '100%'}}/>);
     } else {
       $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
-    }
+    } 
 
     if(this.props.comingFromBoss) {
       let podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
