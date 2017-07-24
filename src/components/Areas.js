@@ -10,7 +10,7 @@ class Areas extends React.Component {
 
   render() {
     const areas = this.props.areas.filter((area, i, a) => {
-      return !((this.props.view === 'tenant') && (i === a.length - 1));
+      return !((this.props.view === 'tenant') && (i === a.length - 1) && (!this.props.comingFromBoss));
     });
     return (
       <div>
@@ -20,6 +20,7 @@ class Areas extends React.Component {
             className='area'
             key={generateKey()}
             area={area}
+            comingFromBoss={this.props.comingFromBoss}
           />
         )}
       </div>
