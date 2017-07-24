@@ -5,7 +5,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import { ListItem } from 'material-ui/List';
-
+import Avatar from 'material-ui/Avatar';
+import data from '../../data.json';
+import Snackbar from 'material-ui/Snackbar';
 
 const generateKey = () => Math.random();
 
@@ -15,14 +17,24 @@ class Issue extends React.Component {
     this.state = {
       open: false,
       file: '',
-      imagePreviewUrl: '',
+      localPhotoURI: '',
       value: '',
       toggled: false,
+      conditionCurrent: 'pass',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidUpdate() {
+    const podpodpod = Object.assign({}, data);
+    const path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
+    path.conditionCurrent = this.state.conditionCurrent;
+    path.localPhotoURI = this.state.localPhotoURI;
+    path.lineItems = this.state.value;
+    localStorage.setItem('podpodpod', JSON.stringify(podpodpod));
   }
 
   handleChange(e) {
@@ -35,12 +47,13 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    const newState = this.state.file ? { file: '', imagePreviewUrl: '', value: '' } : { open: !this.state.open };
+    const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
     this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
   }
 
-  handleClose() {
-    this.setState({open: false, toggled: false});
+  handleClose(e) {
+    const newState = e.target.innerHTML === 'Cancel' ? {file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail'} : {};
+    this.setState(Object.assign({}, newState, {open: false, toggled: false}));
   }
 
   _handleImageChange(e) {
@@ -52,7 +65,7 @@ class Issue extends React.Component {
     reader.onloadend = () => {
       this.setState({
         file: file,
-        imagePreviewUrl: reader.result,
+        localPhotoURI: reader.result,
       });
     };
 
@@ -61,12 +74,12 @@ class Issue extends React.Component {
 
   render() {
 
-    let {imagePreviewUrl} = this.state;
-    let $imagePreview = null;
-    if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} style={{width: '100%'}}/>);
+    let {localPhotoURI} = this.state;
+    let $localPhotoURI = null;
+    if (localPhotoURI) {
+      $localPhotoURI = (<img src={localPhotoURI} style={{width: '100%'}}/>);
     } else {
-      $imagePreview = (<div className="previewText">Please Select an Image</div>);
+      $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
     }
 
     const actions = [
@@ -101,13 +114,15 @@ class Issue extends React.Component {
         primary={true}
         onTouchTap={this.handleSubmit}
         labelStyle={{color: '#4476b2'}}
-      />);
+      />
+    );
 
     return (
 
       <ListItem
         primaryText={this.props.issue.issueName}
         secondaryText={this.props.issue.conditionDefault}
+        hoverColor='rgba(182,202,222,.75)'
         rightToggle={<Toggle
           toggled={this.state.toggled}
           iconStyle={{width: '46px'}}
@@ -115,16 +130,18 @@ class Issue extends React.Component {
           trackStyle={{backgroundColor: '#A5D6A7'}}
           thumbSwitchedStyle={{backgroundColor: 'red'}}
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
-          hoverColor='rgba(182,202,222,.75)'
-          onToggle={this.handleToggle.bind(this)}/>}
+          onToggle={this.handleToggle.bind(this)}
+        />}
       >
 
-        {this.state.file && !this.state.open &&
-          <span>
-            <div className="imgPreview">{$imagePreview}</div>
-            <div>{this.state.value}</div>
-          </span>
-        }
+        <Snackbar
+          open={!this.state.open && this.state.localPhotoURI ? true : false}
+          message="Photo Added"
+          autoHideDuration={4000}
+          onRequestClose={this.handleRequestClose}
+          bodyStyle={{backgroundColor: 'green'}}
+        />
+
         <Dialog
           title='Upload'
           modal={false}
@@ -137,7 +154,7 @@ class Issue extends React.Component {
           autoDetectWindowHeight={true}
         >
           <div className="imgPreview" style={{float: 'left'}}>
-            {$imagePreview}
+            {$localPhotoURI}
           </div>
           <TextField
             onChange={this.handleChange}

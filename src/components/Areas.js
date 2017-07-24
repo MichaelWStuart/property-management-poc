@@ -14,8 +14,9 @@ class Areas extends React.Component {
     });
     return (
       <div>
-        {areas.map(area =>
+        {areas.map((area, areaIndex) =>
           <Area
+            areaIndex={areaIndex}
             className='area'
             key={generateKey()}
             area={area}
