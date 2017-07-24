@@ -2,6 +2,7 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import Checkbox from 'material-ui/Checkbox';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import { ListItem } from 'material-ui/List';
@@ -29,11 +30,23 @@ class Issue extends React.Component {
   }
 
   componentDidUpdate() {
-    const podpodpod = Object.assign({}, data);
-    const path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
-    path.conditionCurrent = this.state.conditionCurrent;
-    path.localPhotoURI = this.state.localPhotoURI;
-    path.lineItems = this.state.value;
+    let podpodpod, path;
+    try {
+      podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
+      path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
+      path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
+    } catch(e) {
+      podpodpod = Object.assign({}, data);
+      path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
+      if(this.props.comingFromBoss) {
+        path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
+      } else {
+        path.conditionCurrent = this.state.conditionCurrent;
+        path.localPhotoURI = this.state.localPhotoURI;
+        path.lineItems = this.state.value;
+      }
+    }
+    console.log('podpodpod', podpodpod);
     localStorage.setItem('podpodpod', JSON.stringify(podpodpod));
   }
 
@@ -47,8 +60,12 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
-    this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
+    if(!this.props.comingFromBoss) {
+      const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
+      this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
+    } else {
+      this.setState({ toggled: !this.state.toggled });
+    }
   }
 
   handleClose(e) {
