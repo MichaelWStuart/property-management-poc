@@ -5,25 +5,18 @@ import Footer from './footer';
 import MediaQuery from 'react-responsive';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-
 import data from '../../data.json';
 import TenantContainer from './tenant-container.js';
-
 const generateKey = () => Math.random();
-
 export default class Manager extends React.Component {
   constructor(props) {
     super(props);
   }
-
   componentWillMount() {
     this.setState(JSON.parse(localStorage.getItem('podpodpod')));
   }
-
   render() {
-
     console.log(this.state);
-
     return (
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />

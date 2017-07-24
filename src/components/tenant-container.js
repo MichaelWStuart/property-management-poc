@@ -14,6 +14,7 @@ import {
 
 import Area from './Area.js';
 import TenantInfoRow from './tenant-info-row.js';
+import TenantInfoList from './tenant-info-list.js';
 
 const generateKey = () => Math.random();
 
@@ -32,7 +33,7 @@ const TenantContainer = props => (
             <Table>
               <TableBody
                 displayRowCheckbox={false}>
-                <TenantInfoRow tenant={props.tenant} />
+                <TenantInfoList tenant={props.tenant} />
                 <Card>
                   <CardHeader
                     title={<strong>Move In Form</strong>}
