@@ -2,6 +2,7 @@ import React from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
+import Checkbox from 'material-ui/Checkbox';
 import Toggle from 'material-ui/Toggle';
 import TextField from 'material-ui/TextField';
 import { ListItem } from 'material-ui/List';
@@ -22,6 +23,7 @@ class Issue extends React.Component {
       toggled: false,
       conditionCurrent: 'pass',
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
@@ -29,11 +31,29 @@ class Issue extends React.Component {
   }
 
   componentDidUpdate() {
-    const podpodpod = Object.assign({}, data);
-    const path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
-    path.conditionCurrent = this.state.conditionCurrent;
-    path.localPhotoURI = this.state.localPhotoURI;
-    path.lineItems = this.state.value;
+    let podpodpod, path, areaIndex, issueIndex;
+    if(this.props.comingFromBoss === true) {
+      podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
+      podpodpod.areas.forEach((area, aI) => {
+        if(area.areaName === this.props.area.areaName) {
+          area.issues.forEach((issue, iI) => {
+            if(issue.issueName === this.props.issue.issueName) {
+              areaIndex = aI;
+              issueIndex = iI;
+            }
+          });
+        }
+      });
+      path = podpodpod.areas[areaIndex].issues[issueIndex];
+      path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
+      console.log('podpodpod', podpodpod);
+    } else {
+      podpodpod = Object.assign({}, data);
+      path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
+      path.conditionCurrent = this.state.conditionCurrent;
+      path.localPhotoURI = this.state.localPhotoURI;
+      path.lineItems = this.state.value;
+    }
     localStorage.setItem('podpodpod', JSON.stringify(podpodpod));
   }
 
@@ -47,8 +67,12 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
-    this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
+    if(this.props.comingFromBoss === true) {
+      this.setState({ toggled: !this.state.toggled });
+    } else {
+      const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
+      this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
+    }
   }
 
   handleClose(e) {
@@ -73,13 +97,32 @@ class Issue extends React.Component {
   }
 
   render() {
-
     let {localPhotoURI} = this.state;
     let $localPhotoURI = null;
+
     if (localPhotoURI) {
       $localPhotoURI = (<img src={localPhotoURI} style={{width: '100%'}}/>);
     } else {
       $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
+    }
+
+    if(this.props.comingFromBoss) {
+      let podpodpod, path, areaIndex, issueIndex;
+      if(this.props.comingFromBoss === true) {
+        podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
+        podpodpod.areas.forEach((area, aI) => {
+          if(area.areaName === this.props.area.areaName) {
+            area.issues.forEach((issue, iI) => {
+              if(issue.issueName === this.props.issue.issueName) {
+                areaIndex = aI;
+                issueIndex = iI;
+              }
+            });
+          }
+        });
+        path = podpodpod.areas[areaIndex].issues[issueIndex];
+        localPhotoURI = path.localPhotoURI;
+      }
     }
 
     const actions = [
@@ -123,7 +166,7 @@ class Issue extends React.Component {
         primaryText={this.props.issue.issueName}
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
-        rightToggle={<Toggle
+        rightToggle={<span><Toggle
           toggled={this.state.toggled}
           iconStyle={{width: '46px'}}
           thumbStyle={{backgroundColor: 'green'}}
@@ -131,7 +174,10 @@ class Issue extends React.Component {
           thumbSwitchedStyle={{backgroundColor: 'red'}}
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
           onToggle={this.handleToggle.bind(this)}
-        />}
+        />
+        {localPhotoURI ? <img src={localPhotoURI} style={{width: '30px', height: '30px'}} /> : null}
+        </span>
+        }
       >
 
         <Snackbar
