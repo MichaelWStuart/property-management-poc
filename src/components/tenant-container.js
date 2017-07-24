@@ -25,8 +25,8 @@ const TenantContainer = props => (
         <CardHeader
           title={props.tenant.tenantName}
           subtitle={`Property: ${props.tenant.property} | Unit Number: ${props.tenant.unitNumber}`}
-          actAsExpander={true}
-          showExpandableButton={true}
+          actAsExpander={props.tenantIndex === 0 ? true : false}
+          showExpandableButton={props.tenantIndex === 0 ? true : false}
         />
         <CardText expandable={true}>
           <MuiThemeProvider>

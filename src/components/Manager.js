@@ -24,7 +24,7 @@ export default class Manager extends React.Component {
           <h1 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'white', display: 'block', width: '80%', position: 'absolute', top: 0, marginLeft: '10%', textAlign: 'center', zIndex: 10}}> Leasing Director's Dashboard </h1>
         </MediaQuery>
         <div style={{paddingBottom: '4em'}}>
-          {this.state.tenants.map(tenant => <TenantContainer areas={this.state.areas} tenant={tenant} key={generateKey()} />)}
+          {this.state.tenants.map((tenant, tenantIndex) => <TenantContainer tenantIndex={tenantIndex} areas={this.state.areas} tenant={tenant} key={generateKey()} />)}
           <div style={{textAlign: 'center', margin: '2em'}}>
             <MuiThemeProvider>
               <RaisedButton href="/boss" label="Approve" labelColor={'#4476b2'} buttonStyle={{width: '30vw', border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)'}}/>
