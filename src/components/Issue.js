@@ -193,7 +193,7 @@ class Issue extends React.Component {
 
         <Dialog
           title='Upload'
-          modal={false}
+          modal={true}
           actions={actions}
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})}
@@ -202,7 +202,7 @@ class Issue extends React.Component {
           autoScrollBodyContent={true}
           autoDetectWindowHeight={true}
         >
-          <div className="imgPreview" style={{float: 'left'}}>
+          <div className="imgPreview" style={{float: 'left', height: '100%'}}>
             {$localPhotoURI}
           </div>
           <TextField
