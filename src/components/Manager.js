@@ -28,7 +28,7 @@ export default class Manager extends React.Component {
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
         <MediaQuery query='(min-device-width: 1224px)'>
-          <h1 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Leasing Director's Dashboard </h1>
+          <h1 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'white', display: 'block', width: '80%', position: 'absolute', top: 0, marginLeft: '10%', textAlign: 'center', zIndex: 10}}> Leasing Director's Dashboard </h1>
         </MediaQuery>
         <div style={{paddingBottom: '4em'}}>
           {this.state.tenants.map(tenant => <TenantContainer areas={this.state.areas} tenant={tenant} key={generateKey()} />)}

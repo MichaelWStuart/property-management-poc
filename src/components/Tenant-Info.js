@@ -5,6 +5,7 @@ import AppBar from 'material-ui/AppBar';
 import MenuItem from 'material-ui/MenuItem';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import IconButton from 'material-ui/IconButton';
+import MediaQuery from 'react-responsive';
 
 
 export default class Header extends React.Component {
@@ -25,31 +26,48 @@ export default class Header extends React.Component {
     return (
       <div>
         <MuiThemeProvider>
-          <Drawer
-            docked={false}
-            width={'70%'}
-            open={this.state.open}
-            onRequestChange={(open) => this.setState({open})}
-          >
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Tenant Name</h2></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Property</h2></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><h3>Unit #</h3></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Phone #</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Email</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Start Date</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Vacate Date</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Lock Change Date</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Ready to Rent Date</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Move-In Deposit</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Non-Refundable</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Rent Due</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Damages</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Cleaning Fees</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Other</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Refund Owed</p></MenuItem>
-            <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Manager Remarks</p></MenuItem>
-
-          </Drawer>
+          <MediaQuery query='(min-device-width: 1224px)'>
+            <Drawer
+              docked={false}
+              open={this.state.open}
+              width={'30%'}
+              onRequestChange={(open) => this.setState({open})}
+            >
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Tenant Name: Bill Walters</h2></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Property: Fiora</h2></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><h3>Unit #: D-7</h3></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Phone #: (206) 123-4567</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Email: bill@microinc.com</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Start Date: 05-12-2017</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Vacate Date: 05-12-2018</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Move-In Deposit: $450</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Rent: $785</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Non-Refundable Cleaning Fees: $125</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Refund Owed: $325</p></MenuItem>
+            </Drawer>
+          </MediaQuery>
+        </MuiThemeProvider>
+        <MuiThemeProvider>
+          <MediaQuery query='(max-device-width: 1223px)'>
+            <Drawer
+              docked={false}
+              open={this.state.open}
+              width={'90%'}
+              onRequestChange={(open) => this.setState({open})}
+            >
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Tenant Name: Bill Walters</h2></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><h2>Property: Fiora</h2></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><h3>Unit #: D-7</h3></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Phone #: (206) 123-4567</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Email: bill@microinc.com</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Start Date: 05-12-2017</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Vacate Date: 05-12-2018</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Move-In Deposit: $450</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Rent: $785</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Non-Refundable Cleaning Fees: $125</p></MenuItem>
+              <MenuItem onTouchTap={this.handleClose.bind(this)}><p>Refund Owed: $325</p></MenuItem>
+            </Drawer>
+          </MediaQuery>
         </MuiThemeProvider>
         <h2 style={{color: 'white', fontFamily: 'Roboto', fontWeight: 100, position: 'absolute', top: '-0.5em', left: '0.5em', zIndex: 10}}>a
           <img
