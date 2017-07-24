@@ -31,10 +31,20 @@ class Issue extends React.Component {
   }
 
   componentDidUpdate() {
-    let podpodpod, path;
+    let podpodpod, path, areaIndex, issueIndex;
     if(this.props.comingFromBoss === true) {
       podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
-      path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
+      podpodpod.areas.forEach((area, aI) => {
+        if(area.areaName === this.props.area.areaName) {
+          area.issues.forEach((issue, iI) => {
+            if(issue.issueName === this.props.issue.issueName) {
+              areaIndex = aI;
+              issueIndex = iI;
+            }
+          });
+        }
+      });
+      path = podpodpod.areas[areaIndex].issues[issueIndex];
       path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
       console.log('podpodpod', podpodpod);
     } else {
@@ -94,12 +104,25 @@ class Issue extends React.Component {
       $localPhotoURI = (<img src={localPhotoURI} style={{width: '100%'}}/>);
     } else {
       $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
-    } 
+    }
 
     if(this.props.comingFromBoss) {
-      let podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
-      let path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
-      localPhotoURI = path.localPhotoURI;
+      let podpodpod, path, areaIndex, issueIndex;
+      if(this.props.comingFromBoss === true) {
+        podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
+        podpodpod.areas.forEach((area, aI) => {
+          if(area.areaName === this.props.area.areaName) {
+            area.issues.forEach((issue, iI) => {
+              if(issue.issueName === this.props.issue.issueName) {
+                areaIndex = aI;
+                issueIndex = iI;
+              }
+            });
+          }
+        });
+        path = podpodpod.areas[areaIndex].issues[issueIndex];
+        localPhotoURI = path.localPhotoURI;
+      }
     }
 
     const actions = [
