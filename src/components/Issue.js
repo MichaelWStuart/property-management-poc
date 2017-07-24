@@ -34,7 +34,7 @@ class Issue extends React.Component {
 
   componentDidUpdate() {
     let podpodpod, path, areaIndex, issueIndex;
-    if(this.props.comingFromBoss === true) {
+    if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
       podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
       podpodpod.areas.forEach((area, aI) => {
         if(area.areaName === this.props.area.areaName) {
@@ -47,7 +47,12 @@ class Issue extends React.Component {
         }
       });
       path = podpodpod.areas[areaIndex].issues[issueIndex];
-      path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
+      if(this.props.location.pathname === '/manager') {
+        path.conditionCurrent = path.conditionCurrent === 'pass' ? 'fail' : 'pass';
+        path.localPhotoURI = '';
+      }
+      else
+        path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
       console.log('podpodpod', podpodpod);
     } else {
       podpodpod = Object.assign({}, data);
@@ -168,7 +173,7 @@ class Issue extends React.Component {
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
         rightToggle={<span><Toggle
-          toggled={(this.props.location.pathname === '/manager' && localPhotoURI) ? true : this.state.toggled}
+          toggled={(this.props.location.pathname === '/manager' && localPhotoURI) ? !this.state.toggled : this.state.toggled}
           iconStyle={{width: '46px'}}
           thumbStyle={{backgroundColor: 'green'}}
           trackStyle={{backgroundColor: '#A5D6A7'}}
