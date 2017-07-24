@@ -7,6 +7,7 @@ import TextField from 'material-ui/TextField';
 import { ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import data from '../../data.json';
+import Snackbar from 'material-ui/Snackbar';
 
 const generateKey = () => Math.random();
 
@@ -116,15 +117,12 @@ class Issue extends React.Component {
       />
     );
 
-    const displayAvatar = () => ({'right': '100px','display': this.state.localPhotoURI ? 'block' : 'none'});
-
     return (
 
       <ListItem
         primaryText={this.props.issue.issueName}
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
-        rightAvatar={<Avatar src={this.state.localPhotoURI} size={40} style={displayAvatar()}/>}
         rightToggle={<Toggle
           toggled={this.state.toggled}
           iconStyle={{width: '46px'}}
@@ -135,6 +133,14 @@ class Issue extends React.Component {
           onToggle={this.handleToggle.bind(this)}
         />}
       >
+
+        <Snackbar
+          open={!this.state.open && this.state.localPhotoURI ? true : false}
+          message="Photo Added"
+          autoHideDuration={4000}
+          onRequestClose={this.handleRequestClose}
+          bodyStyle={{backgroundColor: 'green'}}
+        />
 
         <Dialog
           title='Upload'

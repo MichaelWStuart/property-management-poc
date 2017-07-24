@@ -1,3 +1,4 @@
+const ExtractPlugin = require('extract-text-webpack-plugin');
 import path from 'path';
 
 export default {
@@ -12,6 +13,11 @@ export default {
   module: {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.scss$/,
+        loader: ExtractPlugin.extract(['css-loader', 'sass-loader']),
+      },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
     ],
   },
   resolve: {
