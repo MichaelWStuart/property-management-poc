@@ -30,7 +30,7 @@ export default class Boss extends React.Component {
             areas={this.state.areas} />
           <div style={{textAlign: 'center', margin: '2em'}}>
             <MuiThemeProvider>
-              <RaisedButton href="/" label="Approve" labelColor={"#4476b2"} buttonStyle={{width: '30vw', border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)'}}/>
+              <RaisedButton href="/" label="Approve" labelColor={'#4476b2'} buttonStyle={{width: '30vw', border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)'}}/>
             </MuiThemeProvider>
           </div>
         </div>

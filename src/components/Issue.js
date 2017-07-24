@@ -117,7 +117,7 @@ class Issue extends React.Component {
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
           hoverColor='rgba(182,202,222,.75)'
           onToggle={this.handleToggle.bind(this)}/>}
-        >
+      >
 
         {this.state.file && !this.state.open &&
           <span>

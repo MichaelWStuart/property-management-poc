@@ -31,7 +31,7 @@ export default class Manager extends React.Component {
           {this.state.tenants.map(tenant => <TenantContainer areas={this.state.areas} tenant={tenant} key={generateKey()} />)}
           <div style={{textAlign: 'center', margin: '2em'}}>
             <MuiThemeProvider>
-              <RaisedButton href="/boss" label="Approve" labelColor={"#4476b2"} buttonStyle={{width: '30vw', border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)'}}/>
+              <RaisedButton href="/boss" label="Approve" labelColor={'#4476b2'} buttonStyle={{width: '30vw', border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)'}}/>
             </MuiThemeProvider>
           </div>
         </div>

@@ -25,7 +25,7 @@ class Landing extends React.Component{
           <img src='https://s3-us-west-2.amazonaws.com/podpodpod/pod-logo-smaller.png' style={{height: '30vh'}}/>
         </div>
         <MuiThemeProvider>
-          <RaisedButton href="/tenant" label="Welcome" labelColor={"#4476b2"} buttonStyle={{border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)', position: 'fixed', top: '70%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto'}}/>
+          <RaisedButton href="/tenant" label="Welcome" labelColor={'#4476b2'} buttonStyle={{border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)', position: 'fixed', top: '70%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto'}}/>
         </MuiThemeProvider>
       </div>
     );
