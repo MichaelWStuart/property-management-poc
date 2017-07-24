@@ -1,5 +1,7 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
+import PasswordForm from './password-form';
+import { withRouter } from 'react-router-dom';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -14,7 +16,24 @@ class Landing extends React.Component{
     super(props);
     this.state = {
       open: false,
+      triggered: false,
     };
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.testPassword = this.testPassword.bind(this);
+  }
+
+  handleButtonClick() {
+    window.production ? this.setState({ triggered: true }) : this.props.history.push('/tenant');
+  }
+
+  testPassword(e, password, clearForm) {
+    e.preventDefault();
+    if (password === 'treesdontexist') {
+      this.props.history.push('/tenant');
+    } else {
+      alert('password incorrect');
+      clearForm();
+    }
   }
 
   render(){
@@ -24,12 +43,13 @@ class Landing extends React.Component{
         <div style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto'}}>
           <img src='https://s3-us-west-2.amazonaws.com/podpodpod/pod-logo-smaller.png' style={{height: '30vh'}}/>
         </div>
+        {this.state.triggered && <PasswordForm testPassword={this.testPassword}/>}
         <MuiThemeProvider>
-          <RaisedButton href="/tenant" label="Welcome" labelColor={'#4476b2'} buttonStyle={{border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)', position: 'fixed', top: '70%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto'}}/>
+          <RaisedButton onClick={this.handleButtonClick} label="Welcome" labelColor={'#4476b2'} buttonStyle={{border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)', position: 'fixed', top: '70%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto'}}/>
         </MuiThemeProvider>
       </div>
     );
   }
 }
 
-export default Landing;
+export default withRouter(Landing);
