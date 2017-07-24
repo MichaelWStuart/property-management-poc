@@ -40,7 +40,7 @@ export default class PasswordForm extends React.Component {
           style={{textAlign: 'center'}}
         >
         <form onSubmit={(e) => this.props.testPassword(e, this.state.value, this.clearForm)}>
-          <TextField name='password' onChange={this.handleChange} value={this.state.value} type='password'/>
+          <TextField name='password' onChange={this.handleChange} value={this.state.value} type='password' underlineFocusStyle={{borderColor: '#4476b2'}}/>
           <RaisedButton type='submit' label='Login' style={{display: 'block', width: '50%', margin: '0 auto'}}/>
         </form>
         </Dialog>
