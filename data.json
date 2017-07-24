@@ -12,7 +12,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Carpet free of spots, indents, rips, or tears",
@@ -23,7 +23,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Baseboards wiped down",
@@ -34,7 +34,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Pin holes filled AND wiped down",
@@ -45,7 +45,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Heaters clean and wall streaks cleaned",
@@ -56,7 +56,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Markes repaired or painted",
@@ -67,7 +67,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Closet organizer wiped down/damage free",
@@ -78,7 +78,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         }
       ]
     },
@@ -94,7 +94,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Bath free of prints/marks inside and out",
@@ -105,7 +105,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Knobs working and clean",
@@ -116,7 +116,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         }
       ]
     },
@@ -132,7 +132,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Boxspring new condition",
@@ -143,7 +143,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Bedframe",
@@ -154,7 +154,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Table and Chair",
@@ -165,7 +165,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         }
       ]
     },
@@ -181,7 +181,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Screen good",
@@ -192,7 +192,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Tracks clean and new-looking",
@@ -203,7 +203,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Blinds clean and new-looking",
@@ -214,7 +214,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         }
       ]
     },
@@ -230,7 +230,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Sink wiped down",
@@ -241,7 +241,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Counter-top clean, no marks",
@@ -252,7 +252,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Backsplash wiped down, no damage",
@@ -263,7 +263,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Faucet clean and free of scum",
@@ -274,7 +274,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Fridge moved and cleaned, inside and out",
@@ -285,7 +285,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Microwave moved and cleaned, inside and out",
@@ -296,7 +296,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         }
       ]
     },
@@ -312,7 +312,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Shower scrubbed and free of soap scum",
@@ -323,7 +323,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Shower curtain",
@@ -334,7 +334,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Bath fan/light cover clean",
@@ -345,7 +345,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Mirror/cabinet clean",
@@ -356,7 +356,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Baseboards wiped down",
@@ -367,7 +367,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Tile and grout clean, NO STAINS/SCUM!",
@@ -378,7 +378,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         }
       ]
     },
@@ -394,7 +394,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         }
       ]
     },
@@ -410,7 +410,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss"
         },
         {
           "issueName": "Items left on property",
@@ -421,7 +421,7 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false
+          "approvedByBoss": false, "whoPays": "boss", "whoPays": "boss"
         }
       ]
     }

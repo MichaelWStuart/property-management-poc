@@ -12,12 +12,21 @@ export default class Boss extends React.Component {
     super(props);
   }
 
-
   componentWillMount() {
-    this.setState(data);
+    this.setState(JSON.parse(localStorage.getItem('podpodpod')));
   }
 
   render() {
+    let failedAreas = this.state.areas.map(area => {
+      let failedIssues = area.issues.filter(issue => issue.conditionCurrent === 'fail');
+      area.issues = failedIssues;
+      return area;
+    });
+    console.log('failed areas', failedAreas);
+    failedAreas = failedAreas.filter(area => {
+      return area.issues.length > 0;
+    });
+    console.log('filtered areas', failedAreas);
     return (
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
@@ -27,7 +36,8 @@ export default class Boss extends React.Component {
         <div style={{paddingBottom: '4em'}}>
           <Areas
             className='areas'
-            areas={this.state.areas} />
+            areas={failedAreas}
+            comingFromBoss />
           <div style={{textAlign: 'center', margin: '2em'}}>
             <MuiThemeProvider>
               <RaisedButton href="/" label="Approve" labelColor={'#4476b2'} buttonStyle={{width: '30vw', border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)'}}/>
