@@ -23,6 +23,7 @@ class Issue extends React.Component {
       toggled: false,
       conditionCurrent: 'pass',
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleToggle = this.handleToggle.bind(this);
@@ -86,14 +87,22 @@ class Issue extends React.Component {
   }
 
   render() {
-
     let {localPhotoURI} = this.state;
     let $localPhotoURI = null;
+
     if (localPhotoURI) {
       $localPhotoURI = (<img src={localPhotoURI} style={{width: '100%'}}/>);
     } else {
       $localPhotoURI = (<div className="previewText">Please Select an Image</div>);
     }
+    
+    if(this.props.comingFromBoss) {
+      let podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
+      let path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
+      localPhotoURI = path.localPhotoURI;
+    }
+
+
 
     const actions = [
       <FlatButton
@@ -145,11 +154,10 @@ class Issue extends React.Component {
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
           onToggle={this.handleToggle.bind(this)}
         />
-        {localPhotoURI ? <img src={localPhotoURI} style={{width: '30px', height: '30px'}} /> : null}</span>
+        {localPhotoURI ? <img src={localPhotoURI} style={{width: '30px', height: '30px'}} /> : null}
+        </span>
         }
       >
-
-
 
         <Snackbar
           open={!this.state.open && this.state.localPhotoURI ? true : false}
