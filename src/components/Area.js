@@ -30,6 +30,7 @@ const Area = props => (
                   areaIndex={props.areaIndex}
                   key={generateKey()}
                   issue={issue}
+                  area={props.area}
                   comingFromBoss={props.comingFromBoss}
                 />
               )}
