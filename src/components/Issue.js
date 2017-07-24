@@ -9,6 +9,7 @@ import { ListItem } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import data from '../../data.json';
 import Snackbar from 'material-ui/Snackbar';
+import { withRouter } from 'react-router-dom';
 
 const generateKey = () => Math.random();
 
@@ -175,7 +176,7 @@ class Issue extends React.Component {
           trackSwitchedStyle={{backgroundColor: '#ff9d9d'}}
           onToggle={this.handleToggle.bind(this)}
         />
-        {localPhotoURI ? <img src={localPhotoURI} style={{width: '30px', height: '30px'}} /> : null}
+        {localPhotoURI && (this.props.location.pathname !== '/tenant') && <img src={localPhotoURI} style={{width: '30px', height: '30px'}} />}
         </span>
         }
       >
@@ -221,4 +222,4 @@ class Issue extends React.Component {
   }
 }
 
-export default Issue;
+export default withRouter(Issue);
