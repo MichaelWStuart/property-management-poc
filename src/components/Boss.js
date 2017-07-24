@@ -31,7 +31,7 @@ export default class Boss extends React.Component {
       <div style={{minHeight: '100%', position: 'relative'}}>
         <Header />
         <MediaQuery query='(min-device-width: 1224px)'>
-          <h1 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'white', display: 'block', width: '100%', position: 'absolute', top: 0, textAlign: 'center', zIndex: 10}}> Director{'\''}s Dashboard </h1>
+          <h1 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'white', display: 'block', width: '80%', position: 'absolute', top: 0, marginLeft: '10%', textAlign: 'center', zIndex: 10}}> Director's Dashboard </h1>
         </MediaQuery>
         <div style={{paddingBottom: '4em'}}>
           <Areas
