@@ -210,7 +210,7 @@ class Issue extends React.Component {
             hintText="Comments"
             floatingLabelText="Describe comment"
             multiLine={true}
-            rows={8}
+            rows={2}
             style={{float: 'right', width: '100%'}}
             floatingLabelStyle={{color: '#4476b2'}}
             floatingLabelFocusStyle={{color: '#4476b2'}}
