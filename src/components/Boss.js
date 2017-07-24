@@ -46,6 +46,7 @@ export default class Boss extends React.Component {
                   showExpandableButton={true}
                 />
                 <CardText expandable={true}>
+                  <h3 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'black', display: 'block', width: '100%', textAlign: 'center'}}>Action Required</h3>
                   <Areas
                     className='areas'
                     areas={failedAreas}
