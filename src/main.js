@@ -15,7 +15,6 @@ let html = document.getElementById('htmltag');
 html.style.height = '100vh';
 document.body.style.height = '100%';
 document.body.style.overflow = 'hidden';
-document.body.style.backgroundImage = 'radial-gradient(circle, rgb(182, 202, 222), rgb(51,87,129)';
 
 const App = () => (
   <BrowserRouter>

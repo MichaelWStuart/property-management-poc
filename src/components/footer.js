@@ -8,15 +8,15 @@ class Footer extends React.Component{
         <MediaQuery query='(min-device-width: 1224px)'>
           <div style={{display: 'inlineBlock', float: 'left', margin: '0 auto', width: '(100/3)%', height: '3em', transform: 'translateY(-1em)'}}>
             <img src='https://s3-us-west-2.amazonaws.com/podpodpod/calhoun-logo-alpha-white.png' style={{height: '3em'}} />
-            <p style={{fontSize: '0.7em', transform: 'translateY(-1.2em)'}}>© 2017 - All Rights Reserved.</p>
+            <p style={{fontFamily: 'Roboto', fontSize: '0.7em', transform: 'translateY(-1.2em)'}}>© 2017 - All Rights Reserved.</p>
           </div>
         </MediaQuery>
         <MediaQuery query='(min-device-width: 1224px)'>
           <div style={{display: 'inlineBlock', float: 'left', fontSize: '0.7em', width: '(100/3)%', textAlign: 'left', paddingLeft: '5vw'}}>
-            <p style={{margin: 0}}>Office Hours: 9:00 am to 5:00 pm PT (weekdays)</p>
-            <p style={{margin: 0}}>Mail: P.O. Box 95558, Seattle, WA 98145</p>
-            <p style={{margin: 0}}>Phone: (206) 801-3570</p>
-            <p style={{margin: 0}}>Fax: (206) 322-3374</p>
+            <p style={{fontFamily: 'Roboto', margin: 0}}>Office Hours: 9:00 am to 5:00 pm PT (weekdays)</p>
+            <p style={{fontFamily: 'Roboto', margin: 0}}>Mail: P.O. Box 95558, Seattle, WA 98145</p>
+            <p style={{fontFamily: 'Roboto', margin: 0}}>Phone: (206) 801-3570</p>
+            <p style={{fontFamily: 'Roboto', margin: 0}}>Fax: (206) 322-3374</p>
           </div>
         </MediaQuery>
         <MediaQuery query='(min-device-width: 1224px)'>
