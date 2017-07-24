@@ -203,6 +203,8 @@ class Issue extends React.Component {
           onRequestClose={this.handleClose}
           autoScrollBodyContent={true}
           autoDetectWindowHeight={true}
+          repositionOnUpdate={false}
+          style={{paddingTop: '0'}}
         >
           <div className="imgPreview" style={{float: 'left', height: '100%'}}>
             {$localPhotoURI}
