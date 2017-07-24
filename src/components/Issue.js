@@ -139,6 +139,7 @@ class Issue extends React.Component {
           message="Photo Added"
           autoHideDuration={4000}
           onRequestClose={this.handleRequestClose}
+          bodyStyle={{backgroundColor: 'green'}}
         />
 
         <Dialog
