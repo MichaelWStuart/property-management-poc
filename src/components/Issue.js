@@ -31,22 +31,18 @@ class Issue extends React.Component {
 
   componentDidUpdate() {
     let podpodpod, path;
-    try {
+    if(this.props.comingFromBoss === true) {
       podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
       path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
       path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
-    } catch(e) {
+      console.log('podpodpod', podpodpod);
+    } else {
       podpodpod = Object.assign({}, data);
       path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
-      if(this.props.comingFromBoss) {
-        path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
-      } else {
-        path.conditionCurrent = this.state.conditionCurrent;
-        path.localPhotoURI = this.state.localPhotoURI;
-        path.lineItems = this.state.value;
-      }
+      path.conditionCurrent = this.state.conditionCurrent;
+      path.localPhotoURI = this.state.localPhotoURI;
+      path.lineItems = this.state.value;
     }
-    console.log('podpodpod', podpodpod);
     localStorage.setItem('podpodpod', JSON.stringify(podpodpod));
   }
 
@@ -60,11 +56,11 @@ class Issue extends React.Component {
   }
 
   handleToggle() {
-    if(!this.props.comingFromBoss) {
+    if(this.props.comingFromBoss === true) {
+      this.setState({ toggled: !this.state.toggled });
+    } else {
       const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
       this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
-    } else {
-      this.setState({ toggled: !this.state.toggled });
     }
   }
 
