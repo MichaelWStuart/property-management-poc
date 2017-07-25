@@ -33,35 +33,36 @@ class Issue extends React.Component {
   }
 
   componentDidUpdate() {
-    let podpodpod, path, areaIndex, issueIndex;
-    if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
-      podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
-      podpodpod.areas.forEach((area, aI) => {
-        if(area.areaName === this.props.area.areaName) {
-          area.issues.forEach((issue, iI) => {
-            if(issue.issueName === this.props.issue.issueName) {
-              areaIndex = aI;
-              issueIndex = iI;
-            }
-          });
-        }
-      });
-      path = podpodpod.areas[areaIndex].issues[issueIndex];
-      if(this.props.location.pathname === '/manager') {
-        path.conditionCurrent = path.conditionCurrent === 'pass' ? 'fail' : 'pass';
-        path.localPhotoURI = '';
-      }
-      else
-        path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
-      console.log('podpodpod', podpodpod);
-    } else {
-      podpodpod = Object.assign({}, data);
-      path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
-      path.conditionCurrent = this.state.conditionCurrent;
-      path.localPhotoURI = this.state.localPhotoURI;
-      path.lineItems = this.state.value;
-    }
-    localStorage.setItem('podpodpod', JSON.stringify(podpodpod));
+    console.log(this.state)
+    // let podpodpod, path, areaIndex, issueIndex;
+    // if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
+    //   podpodpod = JSON.parse(localStorage.getItem('podpodpod'));
+    //   podpodpod.areas.forEach((area, aI) => {
+    //     if(area.areaName === this.props.area.areaName) {
+    //       area.issues.forEach((issue, iI) => {
+    //         if(issue.issueName === this.props.issue.issueName) {
+    //           areaIndex = aI;
+    //           issueIndex = iI;
+    //         }
+    //       });
+    //     }
+    //   });
+    //   path = podpodpod.areas[areaIndex].issues[issueIndex];
+    //   if(this.props.location.pathname === '/manager') {
+    //     path.conditionCurrent = path.conditionCurrent === 'pass' ? 'fail' : 'pass';
+    //     path.localPhotoURI = '';
+    //   }
+    //   else
+    //     path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
+    //   console.log('podpodpod', podpodpod);
+    // } else {
+    //   podpodpod = Object.assign({}, data);
+    //   path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
+    //   path.conditionCurrent = this.state.conditionCurrent;
+    //   path.localPhotoURI = this.state.localPhotoURI;
+    //   path.lineItems = this.state.value;
+    // }
+    // localStorage.setItem('podpodpod', JSON.stringify(podpodpod));
   }
 
   handleChange(e) {
@@ -69,38 +70,41 @@ class Issue extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
-    this.setState({ open: false });
+    console.log('submit')
+    // e.preventDefault();
+    // this.setState({ open: false });
   }
 
   handleToggle() {
-    if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
-      this.setState({ localPhotoURI: '', toggled: !this.state.toggled });
-    } else {
-      const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
-      this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
-    }
+    console.log('toggle')
+    // if(this.props.location.pathname === '/manager' || this.props.location.pathname === '/boss') {
+    //   this.setState({ localPhotoURI: '', toggled: !this.state.toggled });
+    // } else {
+    //   const newState = this.state.file ? { file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail' } : { open: !this.state.open, conditionCurrent: 'fail' };
+    //   this.setState(Object.assign({}, newState, { toggled: !this.state.toggled }));
+    // }
   }
 
   handleClose(e) {
-    const newState = e.target.innerHTML === 'Cancel' ? {file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail'} : {};
-    this.setState(Object.assign({}, newState, {open: false, toggled: false}));
+    console.log('close')
+    // const newState = e.target.innerHTML === 'Cancel' ? {file: '', localPhotoURI: '', value: '', conditionCurrent: 'fail'} : {};
+    // this.setState(Object.assign({}, newState, {open: false, toggled: false}));
   }
 
   _handleImageChange(e) {
     e.preventDefault();
-
-    let reader = new FileReader();
-    let file = e.target.files[0];
-
-    reader.onloadend = () => {
-      this.setState({
-        file: file,
-        localPhotoURI: reader.result,
-      });
-    };
-
-    reader.readAsDataURL(file);
+    console.log('handle image change')
+    // let reader = new FileReader();
+    // let file = e.target.files[0];
+    //
+    // reader.onloadend = () => {
+    //   this.setState({
+    //     file: file,
+    //     localPhotoURI: reader.result,
+    //   });
+    // };
+    //
+    // reader.readAsDataURL(file);
   }
 
   render() {
