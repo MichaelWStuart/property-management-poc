@@ -20,7 +20,7 @@ const Area = props => (
           actAsExpander={true}
           showExpandableButton={true}
         />
-        <CardText expandable={true}>
+        <CardText expandable={true} style={{padding: '0'}}>
           <MuiThemeProvider>
             <List>
 

@@ -36,7 +36,7 @@ export default class Boss extends React.Component {
           <h1 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'white', display: 'block', width: '80%', position: 'absolute', top: 0, marginLeft: '10%', textAlign: 'center', zIndex: 10}}> Director{'\''}s Dashboard </h1>
         </MediaQuery>
         <div style={{paddingBottom: '4em'}}>
-          <div className='tenant-container-title'>
+          <div className='tenant-container-title' >
             <MuiThemeProvider>
               <Card>
                 <CardHeader
@@ -49,6 +49,7 @@ export default class Boss extends React.Component {
                   <h3 style={{fontFamily: 'Roboto', fontWeight: 100, color: 'black', display: 'block', width: '100%', textAlign: 'center'}}>Action Required</h3>
                   <Areas
                     className='areas'
+                    style={{padding: '0'}}
                     areas={failedAreas}
                     comingFromBoss />
                   <div style={{textAlign: 'center', margin: '2em'}}>
