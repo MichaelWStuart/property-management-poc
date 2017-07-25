@@ -174,7 +174,8 @@ class Issue extends React.Component {
         primaryText={this.props.issue.issueName}
         secondaryText={this.props.issue.conditionDefault}
         hoverColor='rgba(182,202,222,.75)'
-      
+        innerDivStyle={!localPhotoURI ? {padding:'16px'} : {padding:'0'}}
+        style={{width: '100%', height: '100%'}}
         rightToggle={<span><Toggle
           toggled={(this.props.location.pathname === '/manager' && localPhotoURI) ? !this.state.toggled : this.state.toggled}
           iconStyle={{width: '46px'}}
