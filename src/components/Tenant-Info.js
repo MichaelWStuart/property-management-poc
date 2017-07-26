@@ -74,7 +74,7 @@ export default class Header extends React.Component {
             src='https://s3-us-west-2.amazonaws.com/podpodpod/pod-logo-smaller.png'
             style={{height: '1.5em', position: 'relative', top: '0.2em'}}
           />
-        ment</h2>
+        ment<span style={{fontSize: '0.6em', verticalAlign: 'top'}}>&reg;</span></h2>
         <MuiThemeProvider>
           <AppBar
             titleStyle={{fontSize:'3em', fontWeight: '100'}}
@@ -88,6 +88,3 @@ export default class Header extends React.Component {
     );
   }
 }
-
-
-//title="aPodment"

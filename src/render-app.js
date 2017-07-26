@@ -28,7 +28,7 @@ const renderApp = () =>
     <script src="https://use.fontawesome.com/b329f349e9.js"></script>
     <script>window.production=true</script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <title>aPodments Property Management</title>
+      <title>aPodments&reg; Property Management</title>
     </head>
     <body>
       <div id="root"></div>
