@@ -12,7 +12,7 @@ export default class Manager extends React.Component {
     super(props);
   }
   componentWillMount() {
-    this.setState(JSON.parse(localStorage.getItem('podpodpod')));
+    this.setState(JSON.parse(localStorage.getItem('podpodpod')) || data);
   }
   render() {
     console.log(this.state);
