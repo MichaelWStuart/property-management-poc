@@ -1,9 +1,9 @@
 import React from 'react';
-import Card from 'material-ui/Card'
-import TextField from 'material-ui/TextField'
-import RaisedButton from 'material-ui/RaisedButton'
+import Card from 'material-ui/Card';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Dialog from 'material-ui/Dialog'
+import Dialog from 'material-ui/Dialog';
 
 
 export default class PasswordForm extends React.Component {
@@ -18,7 +18,7 @@ export default class PasswordForm extends React.Component {
   }
 
   handleOpen(e) {
-    this.setState({ open: true})
+    this.setState({ open: true});
   }
 
   handleChange(e) {
@@ -32,18 +32,18 @@ export default class PasswordForm extends React.Component {
   render() {
     return (
       <div style={{textAlign: 'center'}}>
-      <MuiThemeProvider>
-      <Dialog
-          title="Please Enter Password"
-          modal={false}
-          open={this.state.open}
-          style={{textAlign: 'center'}}
-        >
-        <form onSubmit={(e) => this.props.testPassword(e, this.state.value, this.clearForm)}>
-          <TextField name='password' onChange={this.handleChange} value={this.state.value} type='password' underlineFocusStyle={{borderColor: '#4476b2'}}/>
-          <RaisedButton type='submit' label='Login' style={{display: 'block', width: '50%', margin: '0 auto'}}/>
-        </form>
-        </Dialog>
+        <MuiThemeProvider>
+          <Dialog
+            title="Please Enter Password"
+            modal={false}
+            open={this.state.open}
+            style={{textAlign: 'center'}}
+          >
+            <form onSubmit={(e) => this.props.testPassword(e, this.state.value, this.clearForm)}>
+              <TextField name='password' onChange={this.handleChange} value={this.state.value} type='password' underlineFocusStyle={{borderColor: '#4476b2'}}/>
+              <RaisedButton type='submit' label='Login' style={{display: 'block', width: '50%', margin: '0 auto'}}/>
+            </form>
+          </Dialog>
         </MuiThemeProvider>
       </div>
     );
