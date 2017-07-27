@@ -23,7 +23,7 @@ class Landing extends React.Component{
   }
 
   handleButtonClick() {
-    this.props.history.push('/tenant');
+    window.production ? this.setState({ triggered: true }) : this.props.history.push('/tenant');
   }
 
   testPassword(e, password, clearForm) {
