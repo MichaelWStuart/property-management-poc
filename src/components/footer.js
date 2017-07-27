@@ -21,7 +21,7 @@ class Footer extends React.Component{
         </MediaQuery>
         <MediaQuery query='(min-device-width: 1224px)'>
           <div style={{width: '(100/3)%', display: 'inlineBlock', float: 'right', textAlign: 'center', paddingTop: '0.5em'}}>
-            <a href='https://twitter.com/aPodments'>
+            <a href='https://twitter.com/aPodment'>
               <i className="fa fa-twitter-square" aria-hidden="true" style={{color: 'white', fontSize: '1.5em', padding: '0.2em'}}>
               </i>
             </a>
@@ -41,7 +41,7 @@ class Footer extends React.Component{
         </MediaQuery>
         <MediaQuery query='(max-device-width: 1223px)'>
           <div style={{width: '(100/3)%', display: 'block', textAlign: 'center', transform: 'translateX(-1%)'}}>
-            <a href='https://twitter.com/aPodments'>
+            <a href='https://twitter.com/aPodment'>
               <i className="fa fa-twitter-square" aria-hidden="true" style={{color: 'white', fontSize: '2em', padding: '0.3em'}}>
               </i>
             </a>

@@ -27,7 +27,7 @@ const renderApp = () =>
     <!-- ****** faviconit.com favicons ****** -->
     <script src="https://use.fontawesome.com/b329f349e9.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-      <title>aPodments&reg; Property Management</title>
+      <title>aPodment&reg; Property Management</title>
     </head>
     <body>
       <div id="root"></div>
