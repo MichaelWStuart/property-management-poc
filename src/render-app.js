@@ -25,7 +25,7 @@ const renderApp = () =>
     <meta name="msapplication-TileImage" content="https://s3-us-west-2.amazonaws.com/podpodpod/favicons/favicon-144.png">
     <meta name="msapplication-config" content="/browserconfig.xml">
     <!-- ****** faviconit.com favicons ****** -->
-    <script>window.production===true</script>
+    <script>window.production=true</script>
     <script src="https://use.fontawesome.com/b329f349e9.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
       <title>aPodment&reg; Property Management</title>
