@@ -23,7 +23,7 @@ class Landing extends React.Component{
   }
 
   handleButtonClick() {
-    window.production ? this.setState({ triggered: true }) : this.props.history.push('/tenant');
+    this.props.history.push('/tenant');
   }
 
   testPassword(e, password, clearForm) {
@@ -60,7 +60,7 @@ class Landing extends React.Component{
               <RaisedButton onClick={this.handleButtonClick} label="Welcome Home" labelColor={'#4476b2'} buttonStyle={{border: '1px solid #4476b2', fontWeight: 'bold', backgroundColor: 'rgb(255, 255, 255)', position: 'fixed', top: '70%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto'}}/>
             </MuiThemeProvider>
           </div>
-      </MediaQuery>
+        </MediaQuery>
       </div>
     );
   }

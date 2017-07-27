@@ -53,7 +53,6 @@ class Issue extends React.Component {
       }
       else
         path.whoPays = path.whoPays === 'tenant' ? 'boss' : 'tenant';
-      console.log('podpodpod', podpodpod);
     } else {
       podpodpod = Object.assign({}, data);
       path = podpodpod.areas[this.props.areaIndex].issues[this.props.issueIndex];
