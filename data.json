@@ -4,81 +4,88 @@
       "areaName": "Main Room",
       "issues": [
         {
-          "issueName": "Unit tile and grout clean",
-          "conditionDefault": "Clean, no stains or damage",
+          "issueName": "Unit tiling cleaned",
+          "conditionDefault": "Clean with no stains or damage",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Carpet free of spots, indents, rips, or tears",
-          "conditionDefault": "No stains, no indents from furnishings, no damage",
+          "issueName": "Carpet in near-new conditon",
+          "conditionDefault": "No damage, rips, stains, or tears",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Baseboards wiped down",
-          "conditionDefault": "Clean, no marks",
+          "issueName": "Baseboards wiped",
+          "conditionDefault": "Clean with no marks",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Pin holes filled AND wiped down",
-          "conditionDefault": "No holes",
+          "issueName": "Pin holes filled and wiped down",
+          "conditionDefault": "No holes, clean",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Heaters clean and wall streaks cleaned",
-          "conditionDefault": "Clean",
+          "issueName": "Heaters clean",
+          "conditionDefault": "No dust for safe usability",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Markes repaired or painted",
-          "conditionDefault": "No marks",
+          "issueName": "Markes patched or painted",
+          "conditionDefault": "No obvious new marks",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Closet organizer wiped down/damage free",
-          "conditionDefault": "Clean, no damage, no marks",
+          "issueName": "Closet organized",
+          "conditionDefault": "Nothing left inside, cleaned, no damage",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         }
       ]
     },
@@ -86,18 +93,19 @@
       "areaName": "Doors",
       "issues": [
         {
-          "issueName": "Entry free of prints/marks inside and out",
-          "conditionDefault": "Clean",
+          "issueName": "No prints or marks in entry",
+          "conditionDefault": "No damages",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Bath free of prints/marks inside and out",
+          "issueName": "Bath free of marks or scuffs",
           "conditionDefault": "Clean",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
@@ -105,10 +113,11 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Knobs working and clean",
+          "issueName": "Knobs working and wiped",
           "conditionDefault": "Clean",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
@@ -116,7 +125,8 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         }
       ]
     },
@@ -124,48 +134,52 @@
       "areaName": "Bed",
       "issues": [
         {
-          "issueName": "Mattress, NO STAINS OR SPOTS",
-          "conditionDefault": "Mattress clean, no stains. Cover is new, no spots",
+          "issueName": "Mattress",
+          "conditionDefault": "Mattress and cover clean with no stains or spots",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Boxspring new condition",
-          "conditionDefault": "In new condition",
+          "issueName": "Boxspring in new condition",
+          "conditionDefault": "No flaws",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Bedframe",
-          "conditionDefault": "Clean, no damage",
+          "issueName": "Bed",
+          "conditionDefault": "Safely working and no damages",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Table and Chair",
-          "conditionDefault": "Both are clean, no damage, no stains or marks",
+          "issueName": "Tables and Chairs",
+          "conditionDefault": "Clean and not damaged",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         }
       ]
     },
@@ -173,130 +187,141 @@
       "areaName": "Windows",
       "issues": [
         {
-          "issueName": "Windows clean, free of prints",
-          "conditionDefault": "Clean",
+          "issueName": "Window Glass",
+          "conditionDefault": "No prints, clean and clear",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Screen good",
-          "conditionDefault": "No rips or frame damage",
+          "issueName": "Screen",
+          "conditionDefault": "No rips or obvious signs of handling",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Tracks clean and new-looking",
-          "conditionDefault": "Clean",
+          "issueName": "Tracks clean and new",
+          "conditionDefault": "No scum, slides well",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Blinds clean and new-looking",
-          "conditionDefault": "Clean. No bends. Operates as new.",
+          "issueName": "Blinds on windows",
+          "conditionDefault": "Functional, clean, and no damages",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         }
       ]
     },
     {
-      "areaName": "Wetbar",
+      "areaName": "Bar Area",
       "issues": [
         {
-          "issueName": "Cabinet clean inside and out",
-          "conditionDefault": "Clean, no items stored",
+          "issueName": "Cabinets cleaned",
+          "conditionDefault": "Wiped down, no dust or stains",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
           "issueName": "Sink wiped down",
-          "conditionDefault": "Clean",
+          "conditionDefault": "No stains",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Counter-top clean, no marks",
-          "conditionDefault": "Clean, no marks or damages",
+          "issueName": "Counter-top wiped down",
+          "conditionDefault": "Clean with no damages or leftover issues",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Backsplash wiped down, no damage",
-          "conditionDefault": "Clean, no marks, no dents, no damage",
+          "issueName": "Backsplash",
+          "conditionDefault": "Clean and non-dented",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Faucet clean and free of scum",
-          "conditionDefault": "Clean",
+          "issueName": "Faucet clean",
+          "conditionDefault": "Clean with no stains or damage",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Fridge moved and cleaned, inside and out",
-          "conditionDefault": "Clean, defrosted, operating as new",
+          "issueName": "Fridge cleaned and wiped down",
+          "conditionDefault": "Defrosted, empty, and clean",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Microwave moved and cleaned, inside and out",
-          "conditionDefault": "Clean, operating as new",
+          "issueName": "Microwave cleaned",
+          "conditionDefault": "No stains or splatters, operating as new",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         }
       ]
     },
@@ -304,105 +329,89 @@
       "areaName": "Bathroom",
       "issues": [
         {
-          "issueName": "Toilet clean, inside and out, all around",
-          "conditionDefault": "Clean",
+          "issueName": "Toilet clean",
+          "conditionDefault": "Clean inside and out",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Shower scrubbed and free of soap scum",
-          "conditionDefault": "Clean",
+          "issueName": "Bathtub scrubbed",
+          "conditionDefault": "No stains or damage",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Shower curtain",
-          "conditionDefault": "Complimentary - not required to be returned at move-out",
+          "issueName": "Bathroom Fan",
+          "conditionDefault": "Working and clean cover",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Bath fan/light cover clean",
-          "conditionDefault": "Fan cover grates are clean, lights work",
+          "issueName": "Mirrors and cabinets cleaned",
+          "conditionDefault": "No damage to shelves or door",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Mirror/cabinet clean",
-          "conditionDefault": "Clean. No damage to shelves. Door operates as new",
+          "issueName": "Tile and flooring",
+          "conditionDefault": "No stains, burns, or damage",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
-        },
-        {
-          "issueName": "Baseboards wiped down",
-          "conditionDefault": "Clean",
-          "conditionCurrent": "pass",
-          "s3PhotoURI": "",
-          "localPhotoURI": "",
-          "photoUploaded": false,
-          "lineItems": "",
-          "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
-        },
-        {
-          "issueName": "Tile and grout clean, NO STAINS/SCUM!",
-          "conditionDefault": "Clean, no stains or damage",
-          "conditionCurrent": "pass",
-          "s3PhotoURI": "",
-          "localPhotoURI": "",
-          "photoUploaded": false,
-          "lineItems": "",
-          "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         }
       ]
     },
     {
-      "areaName": "Pantry Locker",
+      "areaName": "Pantry",
       "issues": [
         {
-          "issueName": "Cleaned out and wiped Down",
-          "conditionDefault": "Clean. Avenida, Videre, and Pine Only",
+          "issueName": "Empty and wiped clean",
+          "conditionDefault": "Clean, no damaged shelves",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
           "localPhotoURI": "",
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         }
       ]
     },
     {
-      "areaName": "Personal Items Left",
+      "areaName": "Personal Items",
       "issues": [
         {
-          "issueName": "Items left in unit",
+          "issueName": "Items still in unit",
           "conditionDefault": "None",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
@@ -410,10 +419,11 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         },
         {
-          "issueName": "Items left on property",
+          "issueName": "Items left behind",
           "conditionDefault": "None",
           "conditionCurrent": "pass",
           "s3PhotoURI": "",
@@ -421,7 +431,8 @@
           "photoUploaded": false,
           "lineItems": "",
           "approvedByManager": false,
-          "approvedByBoss": false, "whoPays": "boss", "whoPays": "boss"
+          "approvedByBoss": false,
+          "whoPays": "boss"
         }
       ]
     }

@@ -42,7 +42,7 @@ class Landing extends React.Component{
         <MediaQuery query='(min-device-width: 1224px)'>
           <div style={{height: '100vh', overflow: 'hidden', width: 'auto', backgroundImage: 'radial-gradient(circle, rgb(182, 202, 222), rgb(51,87,129)'}}>
             <div style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto'}}>
-              <img src='https://s3-us-west-2.amazonaws.com/podpodpod/pod-logo-smaller.png' style={{height: '30vh'}}/>
+              <img src='' style={{height: '30vh'}}/>
             </div>
             {this.state.triggered && <PasswordForm testPassword={this.testPassword}/>}
             <MuiThemeProvider>
@@ -53,7 +53,7 @@ class Landing extends React.Component{
         <MediaQuery query='(max-device-width: 1223px)'>
           <div style={{height: '100vh', overflow: 'hidden', width: 'auto'}}>
             <div style={{position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: 'auto'}}>
-              <img src='https://s3-us-west-2.amazonaws.com/podpodpod/pod-logo-smaller.png' style={{height: '30vh'}}/>
+              <img src='' style={{height: '30vh'}}/>
             </div>
             {this.state.triggered && <PasswordForm testPassword={this.testPassword}/>}
             <MuiThemeProvider>
